@@ -126,12 +126,19 @@ class POVEditor(gtk.Window):
         self.connect("delete-event", gtk.main_quit)
 
     def on_button_clicked(self, event):
+        self.dump_on_file('flash', 'w')
+
+    def dump(self):
         # http://docs.python.org/2.7/library/struct.html?highlight=struct#byte-order-size-and-alignment
-        with open('flash', 'w') as f:
-            header = struct.pack('!4cBhhB', '%', 'P', 'O', 'V', 1, 500, 400, 1)
-            f.write(header)
-            for p in self.board.values:
-                f.write(struct.pack('!B', p))
+        header = struct.pack('!4cBhhB', '%', 'P', 'O', 'V', 1, 500, 400, 1)
+        for p in self.board.values:
+            header += struct.pack('!B', p)
+
+        return header
+
+    def dump_on_file(self, *args):
+        with open(*args) as f:
+            f.write(self.dump())
 
 if __name__ == "__main__":
     editor = POVEditor()
