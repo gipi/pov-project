@@ -1,12 +1,24 @@
 '''
 Simple editor that load/upload patterns into POV circuitery using
 a serial connection.
+The format used for saving is
+
+struct header {
+    char magic[4], // "%POV"
+    uint_8 version,// 1
+    uint_16 width, // width of the pattern
+    uint_16 height,// height of the pattern
+    uint_8  depth  // # of channel 1 = BW, 3 = RGB
+}
+
+the byte order is the network one (big endian).
 '''
 
 import pygtk
 pygtk.require('2.0')
 import gtk
 import math
+import struct
 
 
 class Board(gtk.DrawingArea):
@@ -99,11 +111,27 @@ class Board(gtk.DrawingArea):
 class POVEditor(gtk.Window):
     def __init__(self):
         gtk.Window.__init__(self)
-        self.board = Board(0, 0)
 
-        self.add(self.board)
+        self.board = Board(0, 0)
+        self.board.set_size_request(500, 400)
+        self.button = gtk.Button()
+        self.button.set_size_request(50,50)
+        self.button.connect('clicked', self.on_button_clicked)
+        vbox = gtk.VBox()
+
+        self.add(vbox)
+        vbox.add(self.board)
+        vbox.add(self.button)
 
         self.connect("delete-event", gtk.main_quit)
+
+    def on_button_clicked(self, event):
+        # http://docs.python.org/2.7/library/struct.html?highlight=struct#byte-order-size-and-alignment
+        with open('flash', 'w') as f:
+            header = struct.pack('!4cBhhB', '%', 'P', 'O', 'V', 1, 500, 400, 1)
+            f.write(header)
+            for p in self.board.values:
+                f.write(struct.pack('!B', p))
 
 if __name__ == "__main__":
     editor = POVEditor()
