@@ -1,6 +1,9 @@
 '''
 Simple editor that load/upload patterns into POV circuitery using
 a serial connection.
+
+It uses PySerial <http://pyserial.sourceforge.net/>.
+
 The format used for saving is
 
 struct header {
@@ -19,6 +22,9 @@ pygtk.require('2.0')
 import gtk
 import math
 import struct
+import serial
+import time
+import sys
 
 
 class Board(gtk.DrawingArea):
@@ -127,6 +133,24 @@ class POVEditor(gtk.Window):
 
     def on_button_clicked(self, event):
         self.dump_on_file('flash', 'w')
+        with gtk.gdk.lock:
+            s = serial.Serial('/dev/ttyACM0', 19200)
+            # this wait is because Arduino reset when open the port
+            # http://stackoverflow.com/questions/1618141/pyserial-problem-with-arduino-works-with-the-python-shell-but-not-in-a-program
+            time.sleep(0.5)
+
+            header = self.dump()
+
+            # the only reliable way to write in the serial port
+            # is one byte at times ('serial' will mean something)
+            for c in header:
+                n_write = s.write(c)
+                s.flush()
+
+                sys.stdout.write(s.read())
+
+            sys.stdout.flush()
+            s.close()
 
     def dump(self):
         # http://docs.python.org/2.7/library/struct.html?highlight=struct#byte-order-size-and-alignment
