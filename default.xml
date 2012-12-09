@@ -1,6 +1,6 @@
 <manifest>
     <remote name="github" fetch="http://github.com/gipi/"/>
 
-    <project name="pov-project" path="src" remote="github" revision="master"/>
+    <project name="pov-project" path="src" remote="github" revision="manifest"/>
     <project name="AVR-experiments" path="build" remote="github" revision="master"/>
 </manifest>
