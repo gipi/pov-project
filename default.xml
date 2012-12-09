@@ -1,0 +1,5 @@
+<manifest>
+    <remote name="github" fetch="http://github.com/gipi/"/>
+
+    <project name="pov-project" path="src" remote="github" revision="master"/>
+</manifest>
