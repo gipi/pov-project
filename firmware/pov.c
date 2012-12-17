@@ -28,15 +28,14 @@
 #define s ((((((((0 /* For building pattern 8 bit wide */
 
 const static unsigned char pattern[] = {
-    s _ _ X X X X _ _,
-    s _ X _ _ _ _ X _,
+    s _ _ _ X X _ _ _,
+    s _ X X _ _ X X _,
     s X _ _ _ _ _ _ X,
-    s X _ _ _ _ _ _ X,
+    s _ _ X _ _ X _ _,
     s X X X X X X X X,
     s X _ _ _ _ _ _ X,
-    s X _ _ _ _ _ _ X,
-    s X _ _ _ _ _ _ X,
-
+    s X _ X _ X _ X _,
+    s _ X _ X _ X _ X,
 };
 
 #undef X
