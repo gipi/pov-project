@@ -1,5 +1,6 @@
 include ../../build/definitions.mk
 
+OBJ_FILES = pov.o
 TARGET  = pov
 TARGETS = $(TARGET)
 MCU     = attiny85
