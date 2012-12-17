@@ -10,6 +10,10 @@
  *  - animations
  */
 #include <avr/io.h>
+#include <avr/power.h>
+#include <util/delay.h>
+#include <include/io.h>
+#include <shift_register/sr.h>
 
 /*
  * From "making a glyph from bit patterns" chapter of "Expert C
@@ -39,6 +43,38 @@ const static unsigned char pattern[] = {
 #undef _
 #undef s
 
+#define DELAY_VALUE 1000
+
+// http://bildr.org/2011/02/74hc595/
+int SER_Pin = 2;   //pin 14 on the 75HC595
+int RCLK_Pin = 1;  //pin 12 on the 75HC595
+int SRCLK_Pin = 0; //pin 11 on the 75HC595
+
+void display_bit_pattern(uint8_t digit, uint8_t size) {
+        clearRegisters();
+        int index;
+        for (index = 0 ; index < size ; index++) {
+            setRegisterPin(index, (digit & (1 << index)) > 0 ? HIGH : LOW);
+        }
+        writeRegisters();
+}
+
 int main() {
+    // change to 8MHz
+    clock_prescale_set(clock_div_1);
+    sr_init(SER_Pin, RCLK_Pin, SRCLK_Pin);
+
+    unsigned int index = 0;
+    unsigned int size = sizeof(pattern);
+
+    while (1) {
+        if (index > size)
+            index = 0;
+
+        // display the row
+        display_bit_pattern(pattern[index++], 8);
+
+        _delay_ms(DELAY_VALUE);
+    }
     return 0;
 }
