@@ -1033,21 +1033,39 @@ design rules under a new name.</description>
 <attribute name="PROD_ID" value="SWCH-08247" x="12.7" y="76.835" size="1.778" layer="27" display="off"/>
 </element>
 <element name="R3" library="SparkFun-Passives" package="1206" value="10k" x="19.685" y="52.705"/>
-<element name="Q1" library="special" package="QS" value="" x="23.495" y="48.895" rot="R180"/>
-<element name="C1" library="capacitor-wima" package="C2.5-2" value="" x="27.94" y="43.815" rot="R180"/>
+<element name="Q1" library="special" package="QS" value="" x="23.495" y="48.895" smashed="yes" rot="R180">
+<attribute name="VALUE" x="28.575" y="52.832" size="1.27" layer="27" ratio="10" rot="R180"/>
+<attribute name="NAME" x="31.75" y="50.673" size="1.27" layer="25" ratio="10" rot="R180"/>
+</element>
+<element name="C1" library="capacitor-wima" package="C2.5-2" value="" x="27.94" y="43.815" smashed="yes" rot="R180">
+<attribute name="NAME" x="29.591" y="46.736" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="29.591" y="46.609" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
 <element name="C2" library="capacitor-wima" package="C2.5-2" value="" x="19.05" y="43.815"/>
 <element name="U1" library="gipi" package="SOIC20" value="MMA3202KEG" x="40.64" y="69.85"/>
-<element name="G1" library="battery" package="10MM_SM_COIN_CELL_CLIP" value="BAT" x="5.715" y="50.165" rot="R90"/>
-<element name="C3" library="capacitor-wima" package="C2.5-2" value="" x="48.26" y="64.77" rot="R270"/>
+<element name="G1" library="battery" package="10MM_SM_COIN_CELL_CLIP" value="BAT" x="5.715" y="50.165" smashed="yes" rot="R90">
+<attribute name="NAME" x="2.99248125" y="56.20125" size="1.27" layer="25" font="vector" rot="R90"/>
+<attribute name="VALUE" x="12.15435" y="45.68245" size="1.27" layer="27" font="vector" rot="R90"/>
+</element>
+<element name="C3" library="capacitor-wima" package="C2.5-2" value="" x="48.26" y="64.77" smashed="yes" rot="R270">
+<attribute name="NAME" x="47.244" y="67.691" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="45.466" y="66.421" size="1.27" layer="27" ratio="10" rot="R270"/>
+</element>
 <element name="SJ1" library="SparkFun-Retired" package="SJ_3_PASTE2&amp;3" value="" x="29.21" y="77.47" rot="R180"/>
 <element name="R9" library="SparkFun-Passives" package="1206" value="10k" x="33.02" y="76.2" rot="R270"/>
 <element name="R10" library="SparkFun-Passives" package="1206" value="10k" x="24.13" y="71.12" rot="R180"/>
 <element name="C4" library="capacitor-wima" package="C2.5-2" value="" x="29.845" y="71.12" rot="R180"/>
-<element name="C5" library="capacitor-wima" package="C2.5-2" value="" x="48.26" y="74.93" rot="R90"/>
+<element name="C5" library="capacitor-wima" package="C2.5-2" value="" x="48.26" y="74.93" smashed="yes" rot="R90">
+<attribute name="NAME" x="49.276" y="72.136" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="51.054" y="73.279" size="1.27" layer="27" ratio="10" rot="R90"/>
+</element>
 <element name="C6" library="capacitor-wima" package="C2.5-2" value="1uf" x="14.605" y="64.77" rot="R180"/>
 <element name="JP4" library="SparkFun-Connectors" package="1X04_LOCK_LONGPADS" value="SERIAL" x="34.29" y="45.72" rot="R90"/>
 <element name="JP5" library="SparkFun-Connectors" package="2X3" value="PRG" x="13.335" y="60.325" rot="R270"/>
-<element name="JP1" library="SparkFun-Connectors" package="1X11" value="M11PTH" x="47.625" y="31.75" rot="R90"/>
+<element name="JP1" library="SparkFun-Connectors" package="1X11" value="M11PTH" x="48.26" y="31.75" smashed="yes" rot="R90">
+<attribute name="NAME" x="48.9712" y="26.5938" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="51.435" y="30.48" size="1.27" layer="27" rot="R90"/>
+</element>
 <element name="R4" library="SparkFun-Passives" package="1206" value="" x="1.905" y="38.735" rot="R90"/>
 <element name="D1" library="SparkFun-LED" package="LED-1206" value="" x="1.905" y="33.02" rot="R270"/>
 <element name="D2" library="SparkFun-LED" package="LED-1206" value="" x="37.465" y="33.02" rot="R270"/>
@@ -1064,7 +1082,10 @@ design rules under a new name.</description>
 <element name="R11" library="SparkFun-Passives" package="1206" value="" x="32.385" y="38.735" rot="R90"/>
 <element name="R12" library="SparkFun-Passives" package="1206" value="" x="8.255" y="38.735" rot="R90"/>
 <element name="R13" library="SparkFun-Passives" package="1206" value="" x="43.18" y="38.735" rot="R90"/>
-<element name="J1" library="con-headers-jp" package="DIL-2MM-2X05" value="JTAG" x="22.225" y="76.835"/>
+<element name="J1" library="con-headers-jp" package="DIL-2MM-2X05" value="JTAG" x="22.225" y="76.835" smashed="yes">
+<attribute name="NAME" x="16.225" y="76.105" size="1.016" layer="25" ratio="18" rot="R90"/>
+<attribute name="VALUE" x="18.51" y="73.675" size="0.8128" layer="27" ratio="10" rot="R180"/>
+</element>
 </elements>
 <signals>
 <signal name="N$3">
