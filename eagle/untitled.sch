@@ -8407,11 +8407,11 @@ Mates with: 87759, 87762, 87758, 87760</description>
 <part name="U$2" library="con-hirose" deviceset="MICRO-USB-" device="ZX62R-B-5P" value="USB"/>
 <part name="R1" library="SparkFun-Passives" deviceset="RESISTOR" device="1206"/>
 <part name="R2" library="SparkFun-Passives" deviceset="RESISTOR" device="1206"/>
-<part name="S1" library="SparkFun-Retired" deviceset="TAC_SWITCH" device="SMD" value="TAC_SWITCHSMD"/>
+<part name="S1" library="SparkFun-Retired" deviceset="TAC_SWITCH" device="SMD" value="RESET"/>
 <part name="R3" library="SparkFun-Passives" deviceset="RESISTOR" device="1206" value="10k"/>
 <part name="GND-ISO1" library="SparkFun-Aesthetics" deviceset="GND-ISO" device=""/>
 <part name="GND-ISO2" library="SparkFun-Aesthetics" deviceset="GND-ISO" device=""/>
-<part name="Q1" library="special" deviceset="XTAL/S" device=""/>
+<part name="Q1" library="special" deviceset="XTAL/S" device="" value="16MHz"/>
 <part name="C1" library="capacitor-wima" deviceset="C" device="2.5/2"/>
 <part name="C2" library="capacitor-wima" deviceset="C" device="2.5/2"/>
 <part name="U1" library="gipi" deviceset="MMA3202KEG" device=""/>
