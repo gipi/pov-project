@@ -25488,6 +25488,10 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <part name="D10" library="gipi" deviceset="DIODE" device=""/>
 <part name="D11" library="gipi" deviceset="DIODE" device=""/>
 <part name="D12" library="gipi" deviceset="DIODE" device=""/>
+<part name="D9" library="SparkFun-LED" deviceset="LED" device="1206"/>
+<part name="R14" library="SparkFun-Passives" deviceset="RESISTOR" device="1206"/>
+<part name="GND-ISO11" library="SparkFun-Aesthetics" deviceset="GND-ISO" device=""/>
+<part name="JP3" library="SparkFun-Connectors" deviceset="M04" device="PTH"/>
 </parts>
 <sheets>
 <sheet>
@@ -25550,6 +25554,10 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <instance part="D10" gate="G$1" x="-30.48" y="73.66" rot="R90"/>
 <instance part="D11" gate="G$1" x="-35.56" y="88.9"/>
 <instance part="D12" gate="G$1" x="185.42" y="40.64"/>
+<instance part="D9" gate="G$1" x="-27.94" y="104.14" rot="R90"/>
+<instance part="R14" gate="G$1" x="-30.48" y="96.52" rot="R90"/>
+<instance part="GND-ISO11" gate="G$1" x="-22.86" y="93.98"/>
+<instance part="JP3" gate="G$1" x="-33.02" y="-40.64"/>
 </instances>
 <busses>
 </busses>
@@ -25710,6 +25718,11 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <wire x1="121.92" y1="68.58" x2="129.54" y2="68.58" width="0.1524" layer="91"/>
 <junction x="129.54" y="68.58"/>
 <pinref part="GND-ISO10" gate="G$1" pin="GND-ISO"/>
+</segment>
+<segment>
+<pinref part="D9" gate="G$1" pin="C"/>
+<wire x1="-22.86" y1="104.14" x2="-22.86" y2="96.52" width="0.1524" layer="91"/>
+<pinref part="GND-ISO11" gate="G$1" pin="GND-ISO"/>
 </segment>
 </net>
 <net name="N$19" class="0">
@@ -26197,6 +26210,8 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <pinref part="D11" gate="G$1" pin="C"/>
 <wire x1="-33.02" y1="88.9" x2="-30.48" y2="88.9" width="0.1524" layer="91"/>
 <junction x="-30.48" y="88.9"/>
+<pinref part="R14" gate="G$1" pin="1"/>
+<wire x1="-30.48" y1="88.9" x2="-30.48" y2="91.44" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$32" class="0">
@@ -26221,6 +26236,61 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <wire x1="180.34" y1="27.94" x2="180.34" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="180.34" y1="40.64" x2="182.88" y2="40.64" width="0.1524" layer="91"/>
 <pinref part="D12" gate="G$1" pin="A"/>
+</segment>
+</net>
+<net name="N$18" class="0">
+<segment>
+<pinref part="R14" gate="G$1" pin="2"/>
+<pinref part="D9" gate="G$1" pin="A"/>
+<wire x1="-30.48" y1="101.6" x2="-30.48" y2="104.14" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="PB0" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="PB0(SS)"/>
+<wire x1="60.96" y1="20.32" x2="71.12" y2="20.32" width="0.1524" layer="91"/>
+<label x="73.66" y="20.32" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="JP3" gate="G$1" pin="3"/>
+<wire x1="-27.94" y1="-38.1" x2="-22.86" y2="-38.1" width="0.1524" layer="91"/>
+<label x="-22.86" y="-38.1" size="1.778" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="PE6" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="PE6"/>
+<wire x1="60.96" y1="38.1" x2="71.12" y2="38.1" width="0.1524" layer="91"/>
+<label x="73.66" y="38.1" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="JP3" gate="G$1" pin="4"/>
+<wire x1="-27.94" y1="-35.56" x2="-22.86" y2="-35.56" width="0.1524" layer="91"/>
+<label x="-22.86" y="-35.56" size="1.778" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="PD0" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="PD0(SCL)"/>
+<wire x1="60.96" y1="48.26" x2="71.12" y2="48.26" width="0.1524" layer="91"/>
+<label x="73.66" y="48.26" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="JP3" gate="G$1" pin="1"/>
+<wire x1="-27.94" y1="-43.18" x2="-22.86" y2="-43.18" width="0.1524" layer="91"/>
+<label x="-22.86" y="-43.18" size="1.778" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="PD1" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="PD1(SDA)"/>
+<wire x1="60.96" y1="50.8" x2="71.12" y2="50.8" width="0.1524" layer="91"/>
+<label x="73.66" y="50.8" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="JP3" gate="G$1" pin="2"/>
+<wire x1="-27.94" y1="-40.64" x2="-22.86" y2="-40.64" width="0.1524" layer="91"/>
+<label x="-22.86" y="-40.64" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>
