@@ -1,8 +1,7 @@
 /*
  * Firmware of the Persistence of View (POV) circuitery.
  *
- * The IC will be an ATTINY85 connected to a shift register
- * that turn on/off the leds.
+ * The IC will be an Atmega32U4.
  *
  * TODO:
  *  - load patterns by UART and save in the EEPROM
