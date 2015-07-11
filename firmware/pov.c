@@ -41,6 +41,7 @@ const static unsigned char pattern[] = {
 #undef _
 #undef s
 
+#define DELAY_QUICK_VALUE 100
 #define DELAY_VALUE 1000
 
 // http://www.nongnu.org/avr-libc/user-manual/FAQ.html#faq_port_pass
@@ -52,7 +53,14 @@ struct led_t {
 };
 
 struct led_t leds[] = {
-    {.ddm = &DDRC, .dd = DDC7, .portm = &PORTC, .port = PORTC7}
+    {.ddm = &DDRC, .dd = DDC7, .portm = &PORTC, .port = PORTC7},
+    {.ddm = &DDRC, .dd = DDC6, .portm = &PORTC, .port = PORTC6},
+    {.ddm = &DDRB, .dd = DDB6, .portm = &PORTB, .port = PORTB6},
+    {.ddm = &DDRB, .dd = DDB5, .portm = &PORTB, .port = PORTB5},
+    {.ddm = &DDRB, .dd = DDB4, .portm = &PORTB, .port = PORTB4},
+    {.ddm = &DDRD, .dd = DDD7, .portm = &PORTD, .port = PORTD7},
+    {.ddm = &DDRD, .dd = DDD6, .portm = &PORTD, .port = PORTD6},
+    {.ddm = &DDRD, .dd = DDD4, .portm = &PORTD, .port = PORTD4},
 };
 
 // set as output all the leds
@@ -69,6 +77,7 @@ enum led_state_t {
     ON,
     OFF
 };
+
 
 
 void set_led(unsigned short idx, enum led_state_t state) {
@@ -92,6 +101,31 @@ void set_led_off(unsigned int idx) {
     set_led(idx, OFF);
 }
 
+/**
+ * Simply loop over all the leds
+ */
+void led_self_test() {
+    unsigned int idx;
+
+    for (idx = 0 ; idx < sizeof(leds)/sizeof(struct led_t) ; idx++) {
+        set_led_on(idx);
+        _delay_ms(DELAY_QUICK_VALUE);
+    }
+
+    for (idx = 0 ; idx < sizeof(leds)/sizeof(struct led_t) ; idx++) {
+        set_led_off(idx);
+        _delay_ms(DELAY_QUICK_VALUE);
+    }
+}
+
+#define GET_STATE(digit,index) (digit & (1 << index)) > 0 ? ON : OFF
+void display_bit_pattern(uint8_t digit, uint8_t size) {
+    int index;
+
+    for (index = 0 ; index < size ; index++) {
+        set_led(index, GET_STATE(digit, index));
+    }
+}
 
 int main() {
     // change to 8MHz
@@ -102,16 +136,15 @@ int main() {
 
     init_led_system();
 
+    led_self_test();
+
     while (1) {
         if (index > size)
             index = 0;
 
         // display the row
-        //display_bit_pattern(pattern[index++], 8);
-        //
-        set_led_on(0);
-        _delay_ms(DELAY_VALUE);
-        set_led_off(0);
+        display_bit_pattern(pattern[index++], 8);
+
         _delay_ms(DELAY_VALUE);
     }
     return 0;
