@@ -13,7 +13,6 @@
 #include <avr/power.h>
 #include <util/delay.h>
 #include <include/io.h>
-#include <shift_register/sr.h>
 
 /*
  * From "making a glyph from bit patterns" chapter of "Expert C
@@ -44,35 +43,75 @@ const static unsigned char pattern[] = {
 
 #define DELAY_VALUE 1000
 
-// http://bildr.org/2011/02/74hc595/
-int SER_Pin = 2;   //pin 14 on the 75HC595
-int RCLK_Pin = 1;  //pin 12 on the 75HC595
-int SRCLK_Pin = 0; //pin 11 on the 75HC595
+// http://www.nongnu.org/avr-libc/user-manual/FAQ.html#faq_port_pass
+struct led_t {
+    volatile uint8_t   *ddm;
+    unsigned int short dd;
+    volatile uint8_t   *portm;
+    unsigned int short port;
+};
 
-void display_bit_pattern(uint8_t digit, uint8_t size) {
-        clearRegisters();
-        int index;
-        for (index = 0 ; index < size ; index++) {
-            setRegisterPin(index, (digit & (1 << index)) > 0 ? HIGH : LOW);
-        }
-        writeRegisters();
+struct led_t leds[] = {
+    {.ddm = &DDRC, .dd = DDC7, .portm = &PORTC, .port = PORTC7}
+};
+
+// set as output all the leds
+void init_led_system() {
+    unsigned int idx = 0;
+
+    for (idx = 0 ; idx < sizeof(leds) ; idx++) {
+        struct led_t led = leds[idx];
+        *led.ddm |= _BV(led.dd);
+    }
 }
+
+enum led_state_t {
+    ON,
+    OFF
+};
+
+
+void set_led(unsigned short idx, enum led_state_t state) {
+    struct led_t led = leds[idx];
+
+    switch(state) {
+        case ON:
+            *led.portm |= _BV(led.port);
+            break;
+        case OFF:
+            *led.portm &= ~_BV(led.port);
+            break;
+    }
+}
+
+void set_led_on (unsigned int idx) {
+    set_led(idx, ON);
+}
+
+void set_led_off(unsigned int idx) {
+    set_led(idx, OFF);
+}
+
 
 int main() {
     // change to 8MHz
-    clock_prescale_set(clock_div_1);
-    sr_init(SER_Pin, RCLK_Pin, SRCLK_Pin);
+    //clock_prescale_set(clock_div_1);
 
     unsigned int index = 0;
     unsigned int size = sizeof(pattern);
+
+    init_led_system();
 
     while (1) {
         if (index > size)
             index = 0;
 
         // display the row
-        display_bit_pattern(pattern[index++], 8);
-
+        //display_bit_pattern(pattern[index++], 8);
+        //
+        set_led_on(0);
+        _delay_ms(DELAY_VALUE);
+        set_led_off(0);
         _delay_ms(DELAY_VALUE);
     }
     return 0;
