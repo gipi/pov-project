@@ -30169,25 +30169,25 @@ Various common sizes : AA, AAA, 18650 (PRT-12895), 20mm coin cell and 12mm coin 
 </classes>
 <parts>
 <part name="U$1" library="SparkFun-Retired" deviceset="ATMEGA32U4" device="TQFP"/>
-<part name="R1" library="SparkFun-Passives" deviceset="RESISTOR" device="1206"/>
-<part name="R2" library="SparkFun-Passives" deviceset="RESISTOR" device="1206"/>
+<part name="R1" library="SparkFun-Passives" deviceset="RESISTOR" device="1206" value="22"/>
+<part name="R2" library="SparkFun-Passives" deviceset="RESISTOR" device="1206" value="22"/>
 <part name="S1" library="SparkFun-Retired" deviceset="TAC_SWITCH" device="SMD" value="RESET"/>
 <part name="R3" library="SparkFun-Passives" deviceset="RESISTOR" device="1206" value="10k"/>
 <part name="GND-ISO1" library="SparkFun-Aesthetics" deviceset="GND-ISO" device=""/>
 <part name="GND-ISO2" library="SparkFun-Aesthetics" deviceset="GND-ISO" device=""/>
 <part name="Q1" library="special" deviceset="XTAL/S" device="" value="16MHz"/>
-<part name="C1" library="SparkFun-Capacitors" deviceset="CAP" device="1206"/>
-<part name="C2" library="SparkFun-Capacitors" deviceset="CAP" device="1206"/>
+<part name="C1" library="SparkFun-Capacitors" deviceset="CAP" device="1206" value="22pF"/>
+<part name="C2" library="SparkFun-Capacitors" deviceset="CAP" device="1206" value="22pF"/>
 <part name="U1" library="gipi" deviceset="MMA3202KEG" device=""/>
 <part name="G1" library="SparkFun-Electromechanical" deviceset="BATTERY" device="20PTH" value="BAT"/>
 <part name="GND-ISO4" library="SparkFun-Aesthetics" deviceset="GND-ISO" device=""/>
-<part name="C3" library="SparkFun-Capacitors" deviceset="CAP" device="1206"/>
+<part name="C3" library="SparkFun-Capacitors" deviceset="CAP" device="1206" value="0.1uF"/>
 <part name="SJ1" library="SparkFun-Retired" deviceset="SOLDERJUMPER_2WAY" device="PASTE2&amp;3"/>
 <part name="GND-ISO5" library="SparkFun-Aesthetics" deviceset="GND-ISO" device=""/>
-<part name="R9" library="SparkFun-Passives" deviceset="RESISTOR" device="1206" value="10k"/>
-<part name="R10" library="SparkFun-Passives" deviceset="RESISTOR" device="1206" value="10k"/>
-<part name="C4" library="SparkFun-Capacitors" deviceset="CAP" device="1206"/>
-<part name="C5" library="SparkFun-Capacitors" deviceset="CAP" device="1206"/>
+<part name="R9" library="SparkFun-Passives" deviceset="RESISTOR" device="1206" value="1k"/>
+<part name="R10" library="SparkFun-Passives" deviceset="RESISTOR" device="1206" value="1k"/>
+<part name="C4" library="SparkFun-Capacitors" deviceset="CAP" device="1206" value="10pF"/>
+<part name="C5" library="SparkFun-Capacitors" deviceset="CAP" device="1206" value="10pF"/>
 <part name="GND-ISO6" library="SparkFun-Aesthetics" deviceset="GND-ISO" device=""/>
 <part name="GND-ISO7" library="SparkFun-Aesthetics" deviceset="GND-ISO" device=""/>
 <part name="C6" library="eagle-ltspice" deviceset="C" device="C1206" value="1uf"/>
@@ -30225,10 +30225,9 @@ Various common sizes : AA, AAA, 18650 (PRT-12895), 20mm coin cell and 12mm coin 
 <part name="D11" library="gipi" deviceset="DIODE" device=""/>
 <part name="D12" library="gipi" deviceset="DIODE" device=""/>
 <part name="D9" library="SparkFun-LED" deviceset="LED" device="1206"/>
-<part name="R14" library="SparkFun-Passives" deviceset="RESISTOR" device="1206"/>
+<part name="R14" library="SparkFun-Passives" deviceset="RESISTOR" device="1206" value="1k"/>
 <part name="GND-ISO11" library="SparkFun-Aesthetics" deviceset="GND-ISO" device=""/>
 <part name="JP3" library="SparkFun-Connectors" deviceset="M04" device="PTH"/>
-<part name="U$2" library="gipi" deviceset="KITTEN" device=""/>
 </parts>
 <sheets>
 <sheet>

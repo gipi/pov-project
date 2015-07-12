@@ -1,0 +1,54 @@
+Partlist
+
+Exported from untitled.brd at 12/07/15 12:26
+
+EAGLE Version 7.2.0 Copyright (c) 1988-2014 CadSoft
+
+Assembly variant: 
+
+Part     Value          Package                   Library                    Position (inch)       Orientation
+
+C1       22pF           1206                      SparkFun-Capacitors        (1.1 1.725)           R180
+C2       22pF           1206                      SparkFun-Capacitors        (0.75 1.725)          R0
+C3       0.1uF          1206                      SparkFun-Capacitors        (1.8 3.075)           R0
+C4       10pF           1206                      SparkFun-Capacitors        (1.175 2.8)           R180
+C5       10pF           1206                      SparkFun-Capacitors        (1.525 3.075)         R180
+C6       1uf            C1206                     eagle-ltspice              (0.5 2.55)            R180
+D1                      LED-1206                  SparkFun-LED               (0.075 1.3)           R270
+D2                      LED-1206                  SparkFun-LED               (1.475 1.3)           R270
+D3                      LED-1206                  SparkFun-LED               (0.575 1.3)           R270
+D4                      LED-1206                  SparkFun-LED               (0.8 1.3)             R270
+D5                      LED-1206                  SparkFun-LED               (1.025 1.3)           R270
+D6                      LED-1206                  SparkFun-LED               (1.275 1.3)           R270
+D7                      LED-1206                  SparkFun-LED               (0.325 1.3)           R270
+D8                      LED-1206                  SparkFun-LED               (1.7 1.3)             R270
+D9                      LED-1206                  SparkFun-LED               (0.725 2.625)         R0
+D10      DIODE          1206                      gipi                       (0.5 2.85)            R0
+D11      DIODE          1206                      gipi                       (0.25 2.05)           R0
+D12      DIODE          1206                      gipi                       (0.575 2.45)          R0
+G1       BAT            BATTCOM_20MM_PTH          SparkFun-Electromechanical (0.59153543 1.775)    MR0
+J1       JTAG           DIL-2MM-2X05              con-headers-jp             (0.875 3.025)         R0
+JP1      M11PTH         1X11                      SparkFun-Connectors        (1.9 1.25)            R90
+JP2      USB-B          USB-B-PTH                 SparkFun-Connectors        (0.2 2.8)             R0
+JP3                     1X04                      SparkFun-Connectors        (1.9 2.375)           R180
+JP4      SERIAL         1X04_LOCK_LONGPADS        SparkFun-Connectors        (1.35 1.8)            R90
+JP5      ICSP           2X3                       SparkFun-Connectors        (0.2 2.4)             R270
+Q1       16MHz          QS                        special                    (0.925 1.925)         R180
+R1       22             1206                      SparkFun-Passives          (0.5 2.65)            R0
+R2       22             1206                      SparkFun-Passives          (0.5 2.75)            R0
+R3       10k            1206                      SparkFun-Passives          (0.775 2.075)         R0
+R4                      1206                      SparkFun-Passives          (0.075 1.525)         R90
+R5                      1206                      SparkFun-Passives          (1.475 1.525)         R90
+R6                      1206                      SparkFun-Passives          (0.575 1.525)         R90
+R7                      1206                      SparkFun-Passives          (0.8 1.525)           R90
+R8                      1206                      SparkFun-Passives          (1.025 1.525)         R90
+R9       1k             1206                      SparkFun-Passives          (1.3 3)               R270
+R10      1k             1206                      SparkFun-Passives          (0.95 2.8)            R180
+R11                     1206                      SparkFun-Passives          (1.275 1.525)         R90
+R12                     1206                      SparkFun-Passives          (0.325 1.525)         R90
+R13                     1206                      SparkFun-Passives          (1.7 1.525)           R90
+R14      1k             1206                      SparkFun-Passives          (0.725 2.75)          R0
+S1       RESET          TACTILE-SWITCH-SMD        SparkFun-Retired           (0.5 3.025)           R0
+SJ1                     SJ_3_PASTE2&3             SparkFun-Retired           (1.175 2.975)         R180
+U$1      ATMEGA32U4TQFP SPARKFUN-DIGITALIC_TQFP44 SparkFun-Retired           (1.075 2.375)         R0
+U1       MMA3202KEG     SOIC20                    gipi                       (1.6 2.75)            R0

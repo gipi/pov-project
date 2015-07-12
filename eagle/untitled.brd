@@ -175,6 +175,13 @@
 <text x="20.955" y="45.085" size="1.778" layer="21">+</text>
 <circle x="6.35" y="46.355" radius="1.27" width="0.3048" layer="21"/>
 <text x="49.582246875" y="66.942384375" size="2.1844" layer="22" font="vector" rot="MR0">github.com/gipi/pov-project</text>
+<text x="3.378403125" y="31.11139375" size="0.8128" layer="21" font="vector">PC7</text>
+<text x="10.3648" y="31.02721875" size="0.8128" layer="21" font="vector">PC6</text>
+<text x="16.123284375" y="30.943040625" size="0.8128" layer="21" font="vector">PB6</text>
+<text x="21.88176875" y="30.94355" size="0.8128" layer="21" font="vector">PB5</text>
+<text x="27.682596875" y="31.07108125" size="0.8128" layer="21" font="vector">PB4</text>
+<text x="33.779815625" y="30.98690625" size="0.8128" layer="21" font="vector">PD7</text>
+<text x="38.98785625" y="30.90273125" size="0.8128" layer="21" font="vector">PD6</text>
 </plain>
 <libraries>
 <library name="SparkFun-Passives">
@@ -10623,8 +10630,8 @@ design rules under a new name.</description>
 <element name="U$1" library="SparkFun-Retired" package="SPARKFUN-DIGITALIC_TQFP44" value="ATMEGA32U4TQFP" x="27.305" y="60.325">
 <attribute name="PROD_ID" value="IC-11161" x="27.305" y="60.325" size="1.778" layer="27" display="off"/>
 </element>
-<element name="R1" library="SparkFun-Passives" package="1206" value="" x="12.7" y="67.31"/>
-<element name="R2" library="SparkFun-Passives" package="1206" value="" x="12.7" y="69.85"/>
+<element name="R1" library="SparkFun-Passives" package="1206" value="22" x="12.7" y="67.31"/>
+<element name="R2" library="SparkFun-Passives" package="1206" value="22" x="12.7" y="69.85"/>
 <element name="S1" library="SparkFun-Retired" package="TACTILE-SWITCH-SMD" value="RESET" x="12.7" y="76.835" smashed="yes">
 <attribute name="PROD_ID" value="SWCH-08247" x="12.7" y="76.835" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="11.811" y="78.613" size="0.4064" layer="25"/>
@@ -10635,25 +10642,25 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="22.86" y="51.308" size="0.6096" layer="27" ratio="10"/>
 <attribute name="NAME" x="25.4" y="50.038" size="1.27" layer="25" ratio="10" rot="R180"/>
 </element>
-<element name="C1" library="SparkFun-Capacitors" package="1206" value="" x="27.94" y="43.815" smashed="yes" rot="R180">
+<element name="C1" library="SparkFun-Capacitors" package="1206" value="22pF" x="27.94" y="43.815" smashed="yes" rot="R180">
 <attribute name="NAME" x="29.591" y="46.736" size="1.27" layer="25" ratio="10" rot="R180"/>
 <attribute name="VALUE" x="29.591" y="46.609" size="1.27" layer="27" ratio="10" rot="R180"/>
 </element>
-<element name="C2" library="SparkFun-Capacitors" package="1206" value="" x="19.05" y="43.815"/>
+<element name="C2" library="SparkFun-Capacitors" package="1206" value="22pF" x="19.05" y="43.815"/>
 <element name="U1" library="gipi" package="SOIC20" value="MMA3202KEG" x="40.64" y="69.85"/>
 <element name="G1" library="SparkFun-Electromechanical" package="BATTCOM_20MM_PTH" value="BAT" x="15.025" y="45.085" smashed="yes" rot="MR0">
 <attribute name="NAME" x="8.98875" y="47.80751875" size="1.27" layer="26" font="vector" rot="MR0"/>
 <attribute name="VALUE" x="19.50755" y="38.64565" size="1.27" layer="28" font="vector" rot="MR0"/>
 </element>
-<element name="C3" library="SparkFun-Capacitors" package="1206" value="" x="45.72" y="78.105" smashed="yes">
+<element name="C3" library="SparkFun-Capacitors" package="1206" value="0.1uF" x="45.72" y="78.105" smashed="yes">
 <attribute name="NAME" x="49.53" y="77.089" size="1.27" layer="25" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="44.069" y="75.311" size="1.27" layer="27" ratio="10"/>
 </element>
 <element name="SJ1" library="SparkFun-Retired" package="SJ_3_PASTE2&amp;3" value="" x="29.845" y="75.565" rot="R180"/>
-<element name="R9" library="SparkFun-Passives" package="1206" value="10k" x="33.02" y="76.2" rot="R270"/>
-<element name="R10" library="SparkFun-Passives" package="1206" value="10k" x="24.13" y="71.12" rot="R180"/>
-<element name="C4" library="SparkFun-Capacitors" package="1206" value="" x="29.845" y="71.12" rot="R180"/>
-<element name="C5" library="SparkFun-Capacitors" package="1206" value="" x="38.735" y="78.105" smashed="yes" rot="R180">
+<element name="R9" library="SparkFun-Passives" package="1206" value="1k" x="33.02" y="76.2" rot="R270"/>
+<element name="R10" library="SparkFun-Passives" package="1206" value="1k" x="24.13" y="71.12" rot="R180"/>
+<element name="C4" library="SparkFun-Capacitors" package="1206" value="10pF" x="29.845" y="71.12" rot="R180"/>
+<element name="C5" library="SparkFun-Capacitors" package="1206" value="10pF" x="38.735" y="78.105" smashed="yes" rot="R180">
 <attribute name="NAME" x="41.529" y="79.375" size="1.27" layer="25" ratio="10" rot="R270"/>
 <attribute name="VALUE" x="40.386" y="80.899" size="1.27" layer="27" ratio="10" rot="R180"/>
 </element>
@@ -10695,7 +10702,7 @@ design rules under a new name.</description>
 <element name="D11" library="gipi" package="1206" value="DIODE" x="6.35" y="52.07"/>
 <element name="D12" library="gipi" package="1206" value="DIODE" x="14.605" y="62.23"/>
 <element name="D9" library="SparkFun-LED" package="LED-1206" value="" x="18.415" y="66.675"/>
-<element name="R14" library="SparkFun-Passives" package="1206" value="" x="18.415" y="69.85"/>
+<element name="R14" library="SparkFun-Passives" package="1206" value="1k" x="18.415" y="69.85"/>
 <element name="JP3" library="SparkFun-Connectors" package="1X04" value="" x="48.26" y="60.325" rot="R180"/>
 <element name="U$2" library="gipi" package="KITTEN" value="KITTEN" x="47.4228125" y="32.7302125" rot="MR0"/>
 </elements>
