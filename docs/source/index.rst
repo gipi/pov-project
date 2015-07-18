@@ -15,7 +15,8 @@ accelerometer; other systems(?) use a magnetic sensor to know the device
 position and velocity but we don't like this solution since need to have a
 magnet hanging on the bike itself.
 
-Possible candidate is the ADXL193, that is a single axis accelerometer.
+In our solution we used the IC named ``MMA3202KEG``, that has two axis
+with 100g and 50g of resolution. It's a linear accelerometer.
 
 Let :math:`\omega` be the angular velocity of the wheel, and :math:`R` the
 external radius of the wheel and :math:`r` the distance from the center of
@@ -49,3 +50,16 @@ angle between :math:`\vec{a}_t` and :math:`\vec{g}`; to avoid the calculation at
 we interpolate using the instants where the acceleration has its maximum and minimum:
 in the first case the sensor is in the lowest position (so that gravity and centrifugal
 acceleration sum up) and the last case is when the sensor is at the highest position.
+
+We suppose that :math:`R=4.10^{-1}m/s` and the bike is running at :math:`V = 36 km/h = {3.6\cdot 10^{4}\over 3600} m/s=10 m/s`; the angular momentum
+is given by
+
+.. math::
+
+   \omega = {10 m/s\over 4\cdot 10^{-1}m} = 25 s^{-1} 
+
+so
+
+.. math::
+
+   a = \left(25\cdot s^{-1}\right)^2\cdot 4\cdot 10^{-1} m = 250 m/s^2 \approx 25g
