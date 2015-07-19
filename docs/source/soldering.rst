@@ -9,6 +9,7 @@ Soldering
  #. reset button and reset resistor
  #. the passive part near the USB connector
  #. the USB connector
+ #. solder the bridge to supply power to the IC
  #. test if the bootloader is accessible
  #. leds
  #. accelerometer
