@@ -30228,6 +30228,9 @@ Various common sizes : AA, AAA, 18650 (PRT-12895), 20mm coin cell and 12mm coin 
 <part name="R14" library="SparkFun-Passives" deviceset="RESISTOR" device="1206" value="1k"/>
 <part name="GND-ISO11" library="SparkFun-Aesthetics" deviceset="GND-ISO" device=""/>
 <part name="JP3" library="SparkFun-Connectors" deviceset="M04" device="PTH"/>
+<part name="S2" library="SparkFun-Retired" deviceset="TAC_SWITCH" device="SMD" value="BOOT"/>
+<part name="GND-ISO12" library="SparkFun-Aesthetics" deviceset="GND-ISO" device=""/>
+<part name="R15" library="SparkFun-Passives" deviceset="RESISTOR" device="1206" value="10k"/>
 </parts>
 <sheets>
 <sheet>
@@ -30293,7 +30296,10 @@ Various common sizes : AA, AAA, 18650 (PRT-12895), 20mm coin cell and 12mm coin 
 <instance part="D9" gate="G$1" x="-27.94" y="104.14" rot="R90"/>
 <instance part="R14" gate="G$1" x="-30.48" y="96.52" rot="R90"/>
 <instance part="GND-ISO11" gate="G$1" x="-22.86" y="93.98"/>
-<instance part="JP3" gate="G$1" x="-33.02" y="-40.64"/>
+<instance part="JP3" gate="G$1" x="-30.48" y="-53.34"/>
+<instance part="S2" gate="S" x="-27.94" y="0"/>
+<instance part="GND-ISO12" gate="G$1" x="-22.86" y="-17.78"/>
+<instance part="R15" gate="G$1" x="-33.02" y="-12.7" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -30460,6 +30466,11 @@ Various common sizes : AA, AAA, 18650 (PRT-12895), 20mm coin cell and 12mm coin 
 <wire x1="-22.86" y1="104.14" x2="-22.86" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="GND-ISO11" gate="G$1" pin="GND-ISO"/>
 </segment>
+<segment>
+<pinref part="S2" gate="S" pin="3"/>
+<pinref part="GND-ISO12" gate="G$1" pin="GND-ISO"/>
+<wire x1="-22.86" y1="0" x2="-22.86" y2="-15.24" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N$19" class="0">
 <segment>
@@ -30532,6 +30543,11 @@ Various common sizes : AA, AAA, 18650 (PRT-12895), 20mm coin cell and 12mm coin 
 <pinref part="D12" gate="G$1" pin="C"/>
 <wire x1="187.96" y1="40.64" x2="203.2" y2="40.64" width="0.1524" layer="91"/>
 <label x="203.2" y="40.64" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R15" gate="G$1" pin="2"/>
+<wire x1="-33.02" y1="-17.78" x2="-33.02" y2="-25.4" width="0.1524" layer="91"/>
+<label x="-33.02" y="-25.4" size="1.778" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="VCC2" class="0">
@@ -30848,6 +30864,17 @@ Various common sizes : AA, AAA, 18650 (PRT-12895), 20mm coin cell and 12mm coin 
 <wire x1="22.86" y1="20.32" x2="20.32" y2="20.32" width="0.1524" layer="91"/>
 <label x="20.32" y="20.32" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="S2" gate="S" pin="1"/>
+<wire x1="-33.02" y1="0" x2="-43.18" y2="0" width="0.1524" layer="91"/>
+<label x="-43.18" y="0" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="S2" gate="S" pin="2"/>
+<pinref part="R15" gate="G$1" pin="1"/>
+<wire x1="-33.02" y1="-2.54" x2="-33.02" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="-33.02" y1="-2.54" x2="-33.02" y2="0" width="0.1524" layer="91"/>
+<junction x="-33.02" y="-2.54"/>
+<junction x="-33.02" y="0"/>
+</segment>
 </net>
 <net name="N$2" class="0">
 <segment>
@@ -30989,8 +31016,8 @@ Various common sizes : AA, AAA, 18650 (PRT-12895), 20mm coin cell and 12mm coin 
 </segment>
 <segment>
 <pinref part="JP3" gate="G$1" pin="3"/>
-<wire x1="-27.94" y1="-38.1" x2="-22.86" y2="-38.1" width="0.1524" layer="91"/>
-<label x="-22.86" y="-38.1" size="1.778" layer="95" xref="yes"/>
+<wire x1="-25.4" y1="-50.8" x2="-20.32" y2="-50.8" width="0.1524" layer="91"/>
+<label x="-20.32" y="-50.8" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="PE6" class="0">
@@ -31001,8 +31028,8 @@ Various common sizes : AA, AAA, 18650 (PRT-12895), 20mm coin cell and 12mm coin 
 </segment>
 <segment>
 <pinref part="JP3" gate="G$1" pin="4"/>
-<wire x1="-27.94" y1="-35.56" x2="-22.86" y2="-35.56" width="0.1524" layer="91"/>
-<label x="-22.86" y="-35.56" size="1.778" layer="95" xref="yes"/>
+<wire x1="-25.4" y1="-48.26" x2="-20.32" y2="-48.26" width="0.1524" layer="91"/>
+<label x="-20.32" y="-48.26" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="PD0" class="0">
@@ -31013,8 +31040,8 @@ Various common sizes : AA, AAA, 18650 (PRT-12895), 20mm coin cell and 12mm coin 
 </segment>
 <segment>
 <pinref part="JP3" gate="G$1" pin="1"/>
-<wire x1="-27.94" y1="-43.18" x2="-22.86" y2="-43.18" width="0.1524" layer="91"/>
-<label x="-22.86" y="-43.18" size="1.778" layer="95" xref="yes"/>
+<wire x1="-25.4" y1="-55.88" x2="-20.32" y2="-55.88" width="0.1524" layer="91"/>
+<label x="-20.32" y="-55.88" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="PD1" class="0">
@@ -31025,8 +31052,8 @@ Various common sizes : AA, AAA, 18650 (PRT-12895), 20mm coin cell and 12mm coin 
 </segment>
 <segment>
 <pinref part="JP3" gate="G$1" pin="2"/>
-<wire x1="-27.94" y1="-40.64" x2="-22.86" y2="-40.64" width="0.1524" layer="91"/>
-<label x="-22.86" y="-40.64" size="1.778" layer="95" xref="yes"/>
+<wire x1="-25.4" y1="-53.34" x2="-20.32" y2="-53.34" width="0.1524" layer="91"/>
+<label x="-20.32" y="-53.34" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>
