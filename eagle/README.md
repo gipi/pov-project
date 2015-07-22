@@ -12,3 +12,5 @@ to test separately these two ICs.
  - expose pin for external generic power supply (connect them to the battery so we save some diodes)
  - expose pins like ``GND`` and ``VCC``
  - add mounting holes
+ - increase traces width for VCC
+ - add ``BOOT`` button
