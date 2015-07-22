@@ -8,6 +8,6 @@ OBJ_FILES = pov.o
 TARGET  = pov
 TARGETS = $(TARGET)
 MCU     = atmega32u4
-F_CPU   = 1000000UL
+F_CPU   = 16000000UL
 
 include $(CORE_BUILD_DIR)/core.mk
