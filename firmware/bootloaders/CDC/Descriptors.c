@@ -46,7 +46,7 @@ const USB_Descriptor_Device_t DeviceDescriptor =
 {
 	.Header                 = {.Size = sizeof(USB_Descriptor_Device_t), .Type = DTYPE_Device},
 
-	.USBSpecification       = VERSION_BCD(01.10),
+	.USBSpecification       = VERSION_BCD(1, 1, 0),
 	.Class                  = CDC_CSCP_CDCClass,
 	.SubClass               = CDC_CSCP_NoSpecificSubclass,
 	.Protocol               = CDC_CSCP_NoSpecificProtocol,
@@ -55,7 +55,7 @@ const USB_Descriptor_Device_t DeviceDescriptor =
 
 	.VendorID               = 0x1B4F,
 	.ProductID              = 0x0007,
-	.ReleaseNumber          = VERSION_BCD(01.00),
+	.ReleaseNumber          = VERSION_BCD(1,0,0),
 
 	.ManufacturerStrIndex   = 0x01,
 	.ProductStrIndex        = 0x02,
@@ -107,7 +107,7 @@ const USB_Descriptor_Configuration_t ConfigurationDescriptor =
 			.Header                 = {.Size = sizeof(USB_CDC_Descriptor_FunctionalHeader_t), .Type = DTYPE_CSInterface},
 			.Subtype                = 0x00,
 
-			.CDCSpecification       = VERSION_BCD(01.10),
+			.CDCSpecification       = VERSION_BCD(1,1,0),
 		},
 
 	.CDC_Functional_ACM =
