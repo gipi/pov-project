@@ -150,8 +150,8 @@
 <text x="44.704" y="46.609" size="0.8128" layer="21" font="vector">PC6</text>
 <text x="44.704" y="49.149" size="0.8128" layer="21" font="vector">PC7</text>
 <text x="44.704" y="51.689" size="0.8128" layer="21" font="vector">PE2</text>
-<text x="43.18" y="54.102" size="0.8128" layer="21" font="vector">PF0/X</text>
-<text x="43.18" y="56.642" size="0.8128" layer="21" font="vector">PF1/Y</text>
+<text x="43.18" y="54.102" size="0.8128" layer="21" font="vector">PF0/Y</text>
+<text x="43.18" y="56.642" size="0.8128" layer="21" font="vector">PF1/X</text>
 <dimension x1="50" y1="80" x2="0" y2="80" x3="25" y3="81.915" textsize="1.778" layer="51"/>
 <dimension x1="50" y1="30" x2="50" y2="80" x3="53.34" y3="55" textsize="1.778" layer="51"/>
 <text x="0.635" y="60.452" size="0.8128" layer="21" font="vector">PB3</text>
