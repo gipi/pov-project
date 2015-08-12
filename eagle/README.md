@@ -14,3 +14,4 @@ to test separately these two ICs.
  - add mounting holes
  - increase traces width for VCC
  - add ``BOOT`` button
+ - AVCC must be connected to VCC through a low-pass filter
