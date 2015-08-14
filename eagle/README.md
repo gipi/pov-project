@@ -1,4 +1,5 @@
-![board layout](board.png)
+![top board layout](front.png)
+![bottom board layout](back.png)
 
 The ``SJ1`` is a solder-jump that decides which chips  must be powered: the central
 pad is the power supply, the left pad is connected to the ``VCC`` of the ``ATMega32U4``
