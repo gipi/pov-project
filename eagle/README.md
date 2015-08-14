@@ -15,3 +15,7 @@ to test separately these two ICs.
  - increase traces width for VCC
  - add ``BOOT`` button
  - AVCC must be connected to VCC through a low-pass filter
+
+## Things to know
+
+ - The top ground plane is named ``GN`` from the ``USB`` ground pin and for some reason ``eagle`` doesn't understand that is connected to ``GND-ISO``
