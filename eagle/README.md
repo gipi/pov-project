@@ -15,6 +15,7 @@ to test separately these two ICs.
  - increase traces width for VCC
  - add ``BOOT`` button
  - AVCC must be connected to VCC through a low-pass filter
+ - Connect the ``GN`` pin from ``USB`` directly to ``GND-ISO`` to avoid dirty eagle behaviour
 
 ## Things to know
 
