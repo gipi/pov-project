@@ -14,7 +14,7 @@ to test separately these two ICs.
  - expose pins like ``GND`` and ``VCC``
  - add mounting holes
  - increase traces width for VCC
- - add ``BOOT`` button
+ - move ``BOOT`` button in order to non overlap pin labels
  - AVCC must be connected to VCC through a low-pass filter
  - Connect the ``GN`` pin from ``USB`` directly to ``GND-ISO`` to avoid dirty eagle behaviour
 
