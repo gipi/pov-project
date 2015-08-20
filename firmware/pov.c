@@ -126,6 +126,13 @@ void display_bit_pattern(uint8_t digit, uint8_t size) {
     }
 }
 
+unsigned short g_index = 0;
+
+void display_next() {
+    // display the row
+    display_bit_pattern(pattern[g_index++ % sizeof(pattern)], 8);
+}
+
 int main() {
     // change to 8MHz
     //clock_prescale_set(clock_div_1);
