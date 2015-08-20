@@ -30560,7 +30560,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="JP3" library="SparkFun-Connectors" deviceset="M04" device="PTH"/>
 <part name="S2" library="SparkFun-Retired" deviceset="TAC_SWITCH" device="SMD" value="BOOT"/>
 <part name="GND-ISO12" library="SparkFun-Aesthetics" deviceset="GND-ISO" device=""/>
-<part name="R15" library="SparkFun-Passives" deviceset="RESISTOR" device="1206" value="10k"/>
+<part name="R15" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="10k"/>
 <part name="R16" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="1k"/>
 <part name="LED1" library="SparkFun-LED" deviceset="LED" device="0603"/>
 <part name="GND-ISO13" library="SparkFun-Aesthetics" deviceset="GND-ISO" device=""/>
