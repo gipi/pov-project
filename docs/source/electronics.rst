@@ -1,5 +1,14 @@
+Electronics
+===========
+
+Microcontroller
+---------------
+
+We are using a ``ATMega32U4`` that has 16MHz clock and a timer with 8-bits resolution
+and two available ADC channels with 10 bits resolution.
+
 Soldering
-=========
+---------
 
  #. ATmega32U4
  #. ICPS header
