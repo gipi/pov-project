@@ -10,6 +10,7 @@
  */
 #include <avr/io.h>
 #include <avr/power.h>
+#include <avr/interrupt.h>
 #include <util/delay.h>
 #include <include/io.h>
 
@@ -133,25 +134,30 @@ void display_next() {
     display_bit_pattern(pattern[g_index++ % sizeof(pattern)], 8);
 }
 
+/**
+ */
+void init_timer() {
+    TCCR0B |= _BV(CS00) | _BV(CS02); // clk/1024
+    TIMSK0 |= _BV(TOIE0);            // enable Timer0 Overflow Interrupt
+}
+
+ISR(TIMER0_OVF_vect) {
+    display_next();
+}
+
 int main() {
     // change to 8MHz
     //clock_prescale_set(clock_div_1);
 
-    unsigned int index = 0;
-    unsigned int size = sizeof(pattern);
 
     init_led_system();
 
     led_self_test();
 
-    while (1) {
-        if (index > size)
-            index = 0;
+    init_timer();
+    sei();
 
-        // display the row
-        display_bit_pattern(pattern[index++], 8);
+    while(1); // needed in order to avoid crash (maybe?)
 
-        _delay_ms(DELAY_VALUE);
-    }
     return 0;
 }
