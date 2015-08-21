@@ -7,9 +7,6 @@ accelerometer; other systems(?) use a magnetic sensor to know the device
 position and velocity but we don't like this solution since need to have a
 magnet hanging on the bike itself.
 
-In our solution we used the IC named ``MMA3202KEG``, that has two axis
-with 100g and 50g of resolution. It's a linear accelerometer.
-
 Let :math:`\omega` be the angular velocity of the wheel, and :math:`R` the
 external radius of the wheel and :math:`r` the distance from the center of
 the wheel and the accelerometer, we have that the velocity of the wheel is given by
