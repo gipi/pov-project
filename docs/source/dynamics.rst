@@ -41,20 +41,26 @@ we have that our test acceleration is
 We need to know the angular velocity of the wheel in order to fit the timing
 of the leds for the pattern to be displayed.
 
-The problem is that the resulting vector (measured by the sensor) is given by the vectorial sum
-of the usual gravity and the centrifugal force
+The accelerometer is moving together with the wheel and it's so placed in a not inertial
+frame, experiencing a costant fictious acceleration along a fixed axes :math:`A` (we call the
+axis :math:`A` and :math:`B` to avoid confusion with existing axis in the real device) and
+a rotating acceleration with angular velocity :math:`\omega` and fixed magnitude :math:`g`.
+
+When the accelerometer is at angle :math:`\theta` with respect to the vertical the
+accelerations measured are
 
 .. math::
 
-   \vec{a}_t = \vec{g} + \vec{a}_c
+    \begin{align}
+    a_A &= a_0 + g\cdot\sin \theta\cr
+    a_B &= g\cdot\cos\theta\cr
+    \end{align}
 
 .. image:: vectors.png
    :align: center
 
-Since from the sensor we obtain only the resulting vector we are missing also the
-angle between :math:`\vec{a}_t` and :math:`\vec{g}`; to avoid the calculation at given time
-we interpolate using the instants where the acceleration has its maximum and minimum:
-in the first case the sensor is in the lowest position (so that gravity and centrifugal
-acceleration sum up) and the last case is when the sensor is at the highest position.
+This allows us to calculate the accelerometer angular position from the second equation,
+using it in the first to retrieve the angular acceleration and finally compute the angular
+velocity.
 
 An accelerometer will show reading like this
