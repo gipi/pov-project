@@ -61,6 +61,10 @@ accelerations measured are
 
 This allows us to calculate the accelerometer angular position from the second equation,
 using it in the first to retrieve the angular acceleration and finally compute the angular
-velocity.
+velocity (actually the angular position is determined knowning if also the slope of variation
+of acceleration otherwise there are two solutions). 
 
 An accelerometer will show reading like this
+
+.. image:: acc.png
+   :align: center
