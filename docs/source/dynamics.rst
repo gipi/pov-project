@@ -18,11 +18,28 @@ the wheel and the accelerometer, we have that the velocity of the wheel is given
 
    V = \omega R
 
-and the centrifugal acceleration is
+using our test wheel at a velocity of
+:math:`V = 18 km/h = {1.8\cdot 10^{4}\over 3600} m/s=5 m/s`
+(using the average speed as indicated by `Wikipedia <https://en.wikipedia.org/wiki/Bicycle_performance#Typical_speeds>`_)
+we obtain
+
+.. math::
+
+   \omega = {5 m/s\over 330\cdot 10^{-3}m} = 15.15 rad\cdot s^{-1} \qquad\hbox{i.e.}\quad
+   f = {\omega\over 2\pi} = 2.41Hz
+
+Since the centrifugal acceleration is
 
 .. math::
 
    a = \omega^2\cdot r
+
+we have that our test acceleration is
+
+.. math::
+
+   a = \left(15.15\cdot s^{-1}\right)^2\cdot 333\cdot 10^{-3} m = 76.43 m/s^2 \approx 8g
+
 
 We need to know the angular velocity of the wheel in order to fit the timing
 of the leds for the pattern to be displayed.
@@ -42,18 +59,5 @@ angle between :math:`\vec{a}_t` and :math:`\vec{g}`; to avoid the calculation at
 we interpolate using the instants where the acceleration has its maximum and minimum:
 in the first case the sensor is in the lowest position (so that gravity and centrifugal
 acceleration sum up) and the last case is when the sensor is at the highest position.
-
-We suppose that :math:`R=4.10^{-1}m` and the bike is running at :math:`V = 36 km/h = {3.6\cdot 10^{4}\over 3600} m/s=10 m/s`;
-the angular velocity is given by
-
-.. math::
-
-   \omega = {10 m/s\over 4\cdot 10^{-1}m} = 25 s^{-1} 
-
-so
-
-.. math::
-
-   a = \left(25\cdot s^{-1}\right)^2\cdot 4\cdot 10^{-1} m = 250 m/s^2 \approx 25g
 
 An accelerometer will show reading like this

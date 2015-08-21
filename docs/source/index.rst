@@ -12,15 +12,9 @@ of the **persistence of view**, a pattern on a spinning wheel (a bicycle one).
 It utilizes an ``ATMega32U4`` as central processing unit and an accelerometer as
 extenal sensor to calibrate internally the position and velocity of the device.
 
-The geometry of the wheel is obviously circular, from `Wikipedia <https://en.wikipedia.org/wiki/Bicycle_wheel#Sizes>`_ we know that
-the denomination of the wheels has the pattern::
-
-    <width inflated tire>-<rim's inner width>
-
-In our test we used one with designation ``22-622`` so that the radius of the wheel is 33mm
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    wheel
    dynamics
