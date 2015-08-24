@@ -11,13 +11,8 @@ to test separately these two ICs.
  - calculate energy consumption
  - calculate theoretically operations timing (is it possible to read from ADC and displaying a picture reliably?)
  - expose pin for external generic power supply (connect them to the battery so we save some diodes)
- - expose pins like ``GND`` and ``VCC``
- - add mounting holes
- - increase traces width for VCC
- - move ``BOOT`` button in order to non overlap pin labels
  - AVCC must be connected to VCC through a low-pass filter
  - Connect the ``GN`` pin from ``USB`` directly to ``GND-ISO`` to avoid dirty eagle behaviour
- - make more uniform labelling (ratio, size, etc...)
 
 ## Things to know
 
