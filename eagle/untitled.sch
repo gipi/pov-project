@@ -30576,7 +30576,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND-ISO4" library="SparkFun-Aesthetics" deviceset="GND-ISO" device=""/>
 <part name="GND-ISO2" library="SparkFun-Aesthetics" deviceset="GND-ISO" device=""/>
 <part name="JP6" library="SparkFun-Connectors" deviceset="M02" device="JST-PTH-VERT"/>
-<part name="NFET" library="GeekAmmo" deviceset="P-CHANNEL-MOSFET" device=""/>
+<part name="N-FET" library="GeekAmmo" deviceset="P-CHANNEL-MOSFET" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -30656,7 +30656,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="GND-ISO4" gate="G$1" x="38.1" y="-193.04"/>
 <instance part="GND-ISO2" gate="G$1" x="-33.02" y="20.32"/>
 <instance part="JP6" gate="G$1" x="-27.94" y="-208.28" rot="R270"/>
-<instance part="NFET" gate="G$1" x="-15.24" y="-220.98" rot="R90"/>
+<instance part="N-FET" gate="G$1" x="-15.24" y="-220.98" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -31389,7 +31389,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="-5.08" y1="-218.44" x2="-5.08" y2="-205.74" width="0.1524" layer="91"/>
 <wire x1="-5.08" y1="-205.74" x2="10.16" y2="-205.74" width="0.1524" layer="91"/>
 <junction x="10.16" y="-205.74"/>
-<pinref part="NFET" gate="G$1" pin="D"/>
+<pinref part="N-FET" gate="G$1" pin="D"/>
 <wire x1="-7.62" y1="-218.44" x2="-5.08" y2="-218.44" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -31430,7 +31430,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="JP6" gate="G$1" pin="2"/>
 <wire x1="-17.78" y1="-241.3" x2="10.16" y2="-241.3" width="0.1524" layer="91"/>
 <wire x1="-25.4" y1="-215.9" x2="-25.4" y2="-241.3" width="0.1524" layer="91"/>
-<pinref part="NFET" gate="G$1" pin="G"/>
+<pinref part="N-FET" gate="G$1" pin="G"/>
 <wire x1="-17.78" y1="-226.06" x2="-17.78" y2="-241.3" width="0.1524" layer="91"/>
 <junction x="-17.78" y="-241.3"/>
 </segment>
@@ -31531,7 +31531,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="JP6" gate="G$1" pin="1"/>
 <wire x1="-27.94" y1="-215.9" x2="-27.94" y2="-218.44" width="0.1524" layer="91"/>
-<pinref part="NFET" gate="G$1" pin="S"/>
+<pinref part="N-FET" gate="G$1" pin="S"/>
 <wire x1="-27.94" y1="-218.44" x2="-22.86" y2="-218.44" width="0.1524" layer="91"/>
 </segment>
 </net>
