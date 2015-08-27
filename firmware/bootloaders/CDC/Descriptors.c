@@ -191,9 +191,9 @@ const USB_Descriptor_String_t LanguageString =
  */
 const USB_Descriptor_String_t ManufacturerString =
 {
-	.Header                 = {.Size = USB_STRING_LEN(11), .Type = DTYPE_String},
+	.Header                 = {.Size = USB_STRING_LEN(9), .Type = DTYPE_String},
 
-	.UnicodeString          = L"Dean Camera"
+	.UnicodeString          = L"Anonymous"
 };
 
 /** Product descriptor string. This is a Unicode string containing the product's details in human readable form,
@@ -202,9 +202,9 @@ const USB_Descriptor_String_t ManufacturerString =
  */
 const USB_Descriptor_String_t ProductString =
 {
-	.Header                 = {.Size = USB_STRING_LEN(8), .Type = DTYPE_String},
+	.Header                 = {.Size = USB_STRING_LEN(13), .Type = DTYPE_String},
 
-	.UnicodeString          = L"LUFA CDC"
+	.UnicodeString          = L"CIAODUINO CDC"
 };
 
 /** This function is called by the library when in device mode, and must be overridden (see LUFA library "USB Descriptors"
