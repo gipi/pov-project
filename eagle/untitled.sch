@@ -30452,17 +30452,17 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </package>
 </packages>
 <symbols>
-<symbol name="P-CHANNEL-MOSFET">
-<wire x1="-2.54" y1="2.54" x2="-1.2192" y2="2.54" width="0.1524" layer="94"/>
+<symbol name="N-CHANNEL-MOSFET">
+<wire x1="-2.54" y1="-2.54" x2="-1.2192" y2="-2.54" width="0.1524" layer="94"/>
 <wire x1="0" y1="0.762" x2="0" y2="0" width="0.254" layer="94"/>
 <wire x1="0" y1="0" x2="0" y2="-0.762" width="0.254" layer="94"/>
 <wire x1="0" y1="3.683" x2="0" y2="2.54" width="0.254" layer="94"/>
 <wire x1="0" y1="2.54" x2="0" y2="1.397" width="0.254" layer="94"/>
-<wire x1="1.143" y1="0.635" x2="2.159" y2="0" width="0.254" layer="94"/>
-<wire x1="1.143" y1="-0.635" x2="2.159" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="0" x2="2.159" y2="0" width="0.1524" layer="94"/>
-<wire x1="2.159" y1="0" x2="2.54" y2="0" width="0.1524" layer="94"/>
-<wire x1="2.54" y1="0" x2="2.54" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="1.905" y1="0.635" x2="0.635" y2="0" width="0.254" layer="94"/>
+<wire x1="1.905" y1="-0.635" x2="0.635" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="0.635" y2="0" width="0.1524" layer="94"/>
+<wire x1="0.635" y1="0" x2="2.54" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="0" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
 <wire x1="0" y1="-1.397" x2="0" y2="-2.54" width="0.254" layer="94"/>
 <wire x1="0" y1="-2.54" x2="0" y2="-3.683" width="0.254" layer="94"/>
 <wire x1="-1.143" y1="2.54" x2="-1.143" y2="-2.54" width="0.254" layer="94"/>
@@ -30477,15 +30477,15 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="5.08" y1="0" x2="5.08" y2="-3.81" width="0.1524" layer="94"/>
 <wire x1="5.08" y1="-3.81" x2="2.54" y2="-3.81" width="0.1524" layer="94"/>
 <wire x1="2.54" y1="5.08" x2="2.54" y2="3.81" width="0.1524" layer="94"/>
-<wire x1="2.54" y1="-3.81" x2="2.54" y2="-5.08" width="0.1524" layer="94"/>
-<text x="-12.7" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
-<text x="-12.7" y="-2.54" size="1.778" layer="95">&gt;NAME</text>
-<text x="-4.318" y="1.27" size="0.8128" layer="94">G</text>
-<text x="1.27" y="5.08" size="0.8128" layer="94">S</text>
-<text x="1.27" y="-5.08" size="0.8128" layer="94">D</text>
-<pin name="D" x="2.54" y="-7.62" visible="off" length="short" direction="pas" rot="R90"/>
-<pin name="S" x="2.54" y="7.62" visible="off" length="short" direction="pas" rot="R270"/>
-<pin name="G" x="-5.08" y="2.54" visible="off" length="short" direction="pas"/>
+<wire x1="2.54" y1="-5.08" x2="2.54" y2="-3.81" width="0.1524" layer="94"/>
+<text x="-12.7" y="0" size="1.778" layer="96">&gt;VALUE</text>
+<text x="-12.7" y="2.54" size="1.778" layer="95">&gt;NAME</text>
+<text x="-3.81" y="-3.81" size="0.8128" layer="94">G</text>
+<text x="1.27" y="-5.08" size="0.8128" layer="94">S</text>
+<text x="1.27" y="5.08" size="0.8128" layer="94">D</text>
+<pin name="D" x="2.54" y="7.62" visible="off" length="short" direction="pas" rot="R270"/>
+<pin name="S" x="2.54" y="-7.62" visible="off" length="short" direction="pas" rot="R90"/>
+<pin name="G" x="-5.08" y="-2.54" visible="off" length="short" direction="pas"/>
 <polygon width="0.1524" layer="94">
 <vertex x="5.08" y="1.27"/>
 <vertex x="3.81" y="0"/>
@@ -30494,20 +30494,186 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="P-CHANNEL-MOSFET">
-<description>P-Channel MOSFET Mode Field Effect Transistor</description>
+<deviceset name="N-CHANNEL-MOSFET">
+<description>N-Channel MOSFET Mode Field Effect Transistor</description>
 <gates>
-<gate name="G$1" symbol="P-CHANNEL-MOSFET" x="0" y="0"/>
+<gate name="G$1" symbol="N-CHANNEL-MOSFET" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="SOT23-3">
+<device name="-BSS138" package="SOT23-3">
 <connects>
 <connect gate="G$1" pin="D" pad="3"/>
 <connect gate="G$1" pin="G" pad="1"/>
 <connect gate="G$1" pin="S" pad="2"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DATASHEET" value="http://www.fairchildsemi.com/ds/BS/BSS138.pdf" constant="no"/>
+<attribute name="DIGIKEY" value="BSS138TR-ND" constant="no"/>
+<attribute name="ELEMENT14" value="2323154" constant="no"/>
+<attribute name="OTHER" value="" constant="no"/>
+<attribute name="URL" value="http://au.element14.com/fairchild-semiconductor/bss138/mosfet-n-ch-50v-220ma-sot-23/dp/2323154" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="SparkFun-DiscreteSemi">
+<description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
+In this library you'll find discrete semiconductors- transistors, diodes, TRIACs, optoisolators, etc.&lt;br&gt;&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is the end user's responsibility to ensure correctness and suitablity for a given componet or application. If you enjoy using this library, please buy one of our products at www.sparkfun.com.
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="SMA-DIODE">
+<description>&lt;B&gt;Diode&lt;/B&gt;&lt;p&gt;
+Basic SMA packaged diode. Good for reverse polarization protection. Common part #: MBRA140</description>
+<wire x1="-2.3" y1="1" x2="-2.3" y2="1.45" width="0.2032" layer="21"/>
+<wire x1="-2.3" y1="1.45" x2="2.3" y2="1.45" width="0.2032" layer="21"/>
+<wire x1="2.3" y1="1.45" x2="2.3" y2="1" width="0.2032" layer="21"/>
+<wire x1="2.3" y1="-1" x2="2.3" y2="-1.45" width="0.2032" layer="21"/>
+<wire x1="2.3" y1="-1.45" x2="-2.3" y2="-1.45" width="0.2032" layer="21"/>
+<wire x1="-2.3" y1="-1.45" x2="-2.3" y2="-1" width="0.2032" layer="21"/>
+<wire x1="1" y1="1" x2="1" y2="-1" width="0.2032" layer="21"/>
+<smd name="A" x="-2.15" y="0" dx="1.27" dy="1.47" layer="1" rot="R180"/>
+<smd name="C" x="2.15" y="0" dx="1.27" dy="1.47" layer="1"/>
+<text x="-2.286" y="1.651" size="0.4064" layer="25">&gt;NAME</text>
+<text x="0.254" y="1.651" size="0.4064" layer="27">&gt;VALUE</text>
+</package>
+<package name="SOD-323">
+<wire x1="-0.9" y1="0.65" x2="-0.5" y2="0.65" width="0.2032" layer="21"/>
+<wire x1="-0.5" y1="0.65" x2="0.9" y2="0.65" width="0.2032" layer="21"/>
+<wire x1="-0.9" y1="-0.65" x2="-0.5" y2="-0.65" width="0.2032" layer="21"/>
+<wire x1="-0.5" y1="-0.65" x2="0.9" y2="-0.65" width="0.2032" layer="21"/>
+<wire x1="-0.5" y1="0.65" x2="-0.5" y2="-0.65" width="0.2032" layer="21"/>
+<smd name="C" x="-1.15" y="0" dx="0.63" dy="0.83" layer="1"/>
+<smd name="A" x="1.15" y="0" dx="0.63" dy="0.83" layer="1"/>
+<text x="-0.889" y="1.016" size="0.4064" layer="25">&gt;NAME</text>
+<text x="-1.016" y="-1.397" size="0.4064" layer="27">&gt;VALUE</text>
+</package>
+<package name="SOD-523">
+<smd name="C" x="0.7" y="0" dx="0.4" dy="0.4" layer="1"/>
+<smd name="A" x="-0.7" y="0" dx="0.4" dy="0.4" layer="1"/>
+<wire x1="-0.6" y1="-0.4" x2="0.4" y2="-0.4" width="0.127" layer="21"/>
+<wire x1="0.4" y1="-0.4" x2="0.6" y2="-0.4" width="0.127" layer="21"/>
+<wire x1="0.6" y1="0.4" x2="0.4" y2="0.4" width="0.127" layer="21"/>
+<wire x1="0.4" y1="0.4" x2="-0.6" y2="0.4" width="0.127" layer="21"/>
+<wire x1="0.6" y1="0.4" x2="0.4" y2="0.6" width="0.127" layer="21"/>
+<wire x1="0.6" y1="-0.4" x2="0.4" y2="-0.6" width="0.127" layer="21"/>
+<wire x1="0.4" y1="-0.6" x2="0.4" y2="-0.4" width="0.127" layer="21"/>
+<wire x1="0.4" y1="0.6" x2="0.4" y2="0.4" width="0.127" layer="21"/>
+<wire x1="-0.6" y1="-0.4" x2="0.3" y2="-0.4" width="0.127" layer="51"/>
+<wire x1="0.3" y1="-0.4" x2="0.6" y2="-0.4" width="0.127" layer="51"/>
+<wire x1="0.6" y1="-0.4" x2="0.6" y2="-0.1" width="0.127" layer="51"/>
+<wire x1="0.6" y1="-0.1" x2="0.6" y2="0.1" width="0.127" layer="51"/>
+<wire x1="0.6" y1="0.1" x2="0.6" y2="0.4" width="0.127" layer="51"/>
+<wire x1="0.6" y1="0.4" x2="0.3" y2="0.4" width="0.127" layer="51"/>
+<wire x1="0.3" y1="0.4" x2="-0.6" y2="0.4" width="0.127" layer="51"/>
+<wire x1="-0.6" y1="0.4" x2="-0.6" y2="0.1" width="0.127" layer="51"/>
+<wire x1="-0.6" y1="0.1" x2="-0.6" y2="-0.1" width="0.127" layer="51"/>
+<wire x1="-0.6" y1="-0.1" x2="-0.6" y2="-0.4" width="0.127" layer="51"/>
+<wire x1="0.6" y1="0.1" x2="0.8" y2="0.1" width="0.127" layer="51"/>
+<wire x1="0.8" y1="0.1" x2="0.8" y2="-0.1" width="0.127" layer="51"/>
+<wire x1="0.8" y1="-0.1" x2="0.6" y2="-0.1" width="0.127" layer="51"/>
+<wire x1="-0.6" y1="-0.1" x2="-0.8" y2="-0.1" width="0.127" layer="51"/>
+<wire x1="-0.6" y1="0.1" x2="-0.8" y2="0.1" width="0.127" layer="51"/>
+<wire x1="-0.8" y1="0.1" x2="-0.8" y2="-0.1" width="0.127" layer="51"/>
+<wire x1="0.3" y1="0.4" x2="0.3" y2="-0.4" width="0.127" layer="51"/>
+</package>
+</packages>
+<symbols>
+<symbol name="DIODE-SCHOTTKY">
+<wire x1="-1.27" y1="-1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="-1.27" y2="1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="1.27" x2="-1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="0" x2="-1.27" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="1.27" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="1.27" x2="1.778" y2="1.524" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-1.27" x2="0.762" y2="-1.524" width="0.254" layer="94"/>
+<text x="2.54" y="0.4826" size="1.778" layer="95">&gt;NAME</text>
+<text x="2.54" y="-2.3114" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="A" x="-2.54" y="0" visible="off" length="point" direction="pas"/>
+<pin name="C" x="2.54" y="0" visible="off" length="point" direction="pas" rot="R180"/>
+<wire x1="-2.54" y1="0" x2="-1.27" y2="0" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="0" x2="1.27" y2="0" width="0.1524" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="DIODE-SCHOTTKY" prefix="D">
+<description>Schottky diodes in SFE's production catalog&lt;p&gt;
+
+BAT20J 1A 23V 0.62Vf&lt;br&gt;
+RB751 120mA 40V 0.37Vf&lt;br&gt;
+PMEG4005EJ 0.5A 40V 0.42Vf&lt;br&gt;
+MBRA140 1A 40V 0.5Vf&lt;br&gt;
+B340A  3A 40V SMA &lt;br&gt;</description>
+<gates>
+<gate name="G$1" symbol="DIODE-SCHOTTKY" x="0" y="0"/>
+</gates>
+<devices>
+<device name="-BAT20J" package="SOD-323">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="DIO-11623" constant="no"/>
+<attribute name="VALUE" value="BAT20J" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="-RB751" package="SOD-523">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="DIO-11018" constant="no"/>
+<attribute name="VALUE" value="RB751" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="-MBRA140" package="SMA-DIODE">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="DIO-08053" constant="no"/>
+<attribute name="VALUE" value="MBRA140" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="-PMEG4005EJ" package="SOD-323">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="DIO-10955" constant="no"/>
+<attribute name="VALUE" value="PMEG4005EJ" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="-B340A" package="SMA-DIODE">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="DIO-09886"/>
+<attribute name="VALUE" value="B340A" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
@@ -30585,19 +30751,19 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="R16" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="1k"/>
 <part name="XS" library="SparkFun-LED" deviceset="LED" device="0603"/>
 <part name="GND-ISO13" library="SparkFun-Aesthetics" deviceset="GND-ISO" device=""/>
-<part name="BOOST" library="SparkFun-PowerIC" deviceset="V_REG_TPS61040" device="SMD"/>
-<part name="L1" library="SparkFun-Passives" deviceset="INDUCTOR" device="0603"/>
+<part name="BOOST" library="SparkFun-PowerIC" deviceset="V_REG_TPS61040" device="SMD" value="TPS61040"/>
+<part name="L1" library="SparkFun-Passives" deviceset="INDUCTOR" device="1210" value="3.3uH"/>
 <part name="C7" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="10nF"/>
 <part name="GND-ISO14" library="SparkFun-Aesthetics" deviceset="GND-ISO" device=""/>
-<part name="D13" library="gipi" deviceset="DIODE" device=""/>
-<part name="R17" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="1k"/>
-<part name="R18" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="1k"/>
+<part name="D13" library="SparkFun-DiscreteSemi" deviceset="DIODE-SCHOTTKY" device="-MBRA140" value="MBRA140"/>
+<part name="RA" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="3.09k"/>
+<part name="RB" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="1k"/>
 <part name="C8" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="10nF"/>
 <part name="C9" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="10nF"/>
 <part name="GND-ISO4" library="SparkFun-Aesthetics" deviceset="GND-ISO" device=""/>
 <part name="GND-ISO2" library="SparkFun-Aesthetics" deviceset="GND-ISO" device=""/>
 <part name="JP6" library="SparkFun-Connectors" deviceset="M02" device="JST-PTH-VERT"/>
-<part name="N-FET" library="GeekAmmo" deviceset="P-CHANNEL-MOSFET" device=""/>
+<part name="N-FET" library="GeekAmmo" deviceset="N-CHANNEL-MOSFET" device="-BSS138"/>
 <part name="TP1" library="gipi" deviceset="TESTPAD" device=""/>
 </parts>
 <sheets>
@@ -30671,14 +30837,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="C7" gate="G$1" x="10.16" y="-226.06" rot="R180"/>
 <instance part="GND-ISO14" gate="G$1" x="88.9" y="-246.38"/>
 <instance part="D13" gate="G$1" x="71.12" y="-205.74"/>
-<instance part="R17" gate="G$1" x="81.28" y="-215.9" rot="R90"/>
-<instance part="R18" gate="G$1" x="76.2" y="-233.68" rot="R90"/>
+<instance part="RA" gate="G$1" x="81.28" y="-215.9" rot="R90"/>
+<instance part="RB" gate="G$1" x="76.2" y="-233.68" rot="R90"/>
 <instance part="C8" gate="G$1" x="99.06" y="-213.36" rot="R180"/>
 <instance part="C9" gate="G$1" x="114.3" y="-226.06" rot="R180"/>
 <instance part="GND-ISO4" gate="G$1" x="38.1" y="-193.04"/>
 <instance part="GND-ISO2" gate="G$1" x="-33.02" y="20.32"/>
 <instance part="JP6" gate="G$1" x="-27.94" y="-208.28" rot="R270"/>
-<instance part="N-FET" gate="G$1" x="-15.24" y="-220.98" rot="R90"/>
+<instance part="N-FET" gate="G$1" x="-7.62" y="-228.6"/>
 <instance part="TP1" gate="G$1" x="38.1" y="-134.62" rot="R180"/>
 </instances>
 <busses>
@@ -31409,11 +31575,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="C7" gate="G$1" pin="2"/>
 <wire x1="10.16" y1="-215.9" x2="10.16" y2="-223.52" width="0.1524" layer="91"/>
 <junction x="10.16" y="-215.9"/>
-<wire x1="-5.08" y1="-218.44" x2="-5.08" y2="-205.74" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="-220.98" x2="-5.08" y2="-205.74" width="0.1524" layer="91"/>
 <wire x1="-5.08" y1="-205.74" x2="10.16" y2="-205.74" width="0.1524" layer="91"/>
 <junction x="10.16" y="-205.74"/>
 <pinref part="N-FET" gate="G$1" pin="D"/>
-<wire x1="-7.62" y1="-218.44" x2="-5.08" y2="-218.44" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$39" class="0">
@@ -31441,21 +31606,21 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="45.72" y1="-220.98" x2="63.5" y2="-220.98" width="0.1524" layer="91"/>
 <wire x1="63.5" y1="-220.98" x2="63.5" y2="-241.3" width="0.1524" layer="91"/>
 <junction x="63.5" y="-241.3"/>
-<pinref part="R18" gate="G$1" pin="1"/>
+<pinref part="RB" gate="G$1" pin="1"/>
 <wire x1="76.2" y1="-238.76" x2="76.2" y2="-241.3" width="0.1524" layer="91"/>
 <junction x="76.2" y="-241.3"/>
 <pinref part="C9" gate="G$1" pin="1"/>
 <wire x1="88.9" y1="-241.3" x2="114.3" y2="-241.3" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="-241.3" x2="114.3" y2="-231.14" width="0.1524" layer="91"/>
 <junction x="88.9" y="-241.3"/>
-<wire x1="-25.4" y1="-241.3" x2="-17.78" y2="-241.3" width="0.1524" layer="91"/>
+<wire x1="-25.4" y1="-241.3" x2="-12.7" y2="-241.3" width="0.1524" layer="91"/>
 <junction x="10.16" y="-241.3"/>
 <pinref part="JP6" gate="G$1" pin="2"/>
-<wire x1="-17.78" y1="-241.3" x2="10.16" y2="-241.3" width="0.1524" layer="91"/>
+<wire x1="-12.7" y1="-241.3" x2="10.16" y2="-241.3" width="0.1524" layer="91"/>
 <wire x1="-25.4" y1="-215.9" x2="-25.4" y2="-241.3" width="0.1524" layer="91"/>
 <pinref part="N-FET" gate="G$1" pin="G"/>
-<wire x1="-17.78" y1="-226.06" x2="-17.78" y2="-241.3" width="0.1524" layer="91"/>
-<junction x="-17.78" y="-241.3"/>
+<wire x1="-12.7" y1="-231.14" x2="-12.7" y2="-241.3" width="0.1524" layer="91"/>
+<junction x="-12.7" y="-241.3"/>
 </segment>
 <segment>
 <pinref part="C3" gate="G$1" pin="1"/>
@@ -31508,12 +31673,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="BOOST" gate="G$1" pin="FB"/>
 <wire x1="45.72" y1="-226.06" x2="76.2" y2="-226.06" width="0.1524" layer="91"/>
-<pinref part="R18" gate="G$1" pin="2"/>
+<pinref part="RB" gate="G$1" pin="2"/>
 <wire x1="76.2" y1="-226.06" x2="81.28" y2="-226.06" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="-226.06" x2="99.06" y2="-226.06" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="-228.6" x2="76.2" y2="-226.06" width="0.1524" layer="91"/>
 <junction x="76.2" y="-226.06"/>
-<pinref part="R17" gate="G$1" pin="1"/>
+<pinref part="RA" gate="G$1" pin="1"/>
 <wire x1="81.28" y1="-220.98" x2="81.28" y2="-226.06" width="0.1524" layer="91"/>
 <junction x="81.28" y="-226.06"/>
 <pinref part="C8" gate="G$1" pin="1"/>
@@ -31524,7 +31689,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="D13" gate="G$1" pin="C"/>
 <wire x1="99.06" y1="-205.74" x2="81.28" y2="-205.74" width="0.1524" layer="91"/>
-<pinref part="R17" gate="G$1" pin="2"/>
+<pinref part="RA" gate="G$1" pin="2"/>
 <wire x1="81.28" y1="-205.74" x2="73.66" y2="-205.74" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="-210.82" x2="81.28" y2="-205.74" width="0.1524" layer="91"/>
 <junction x="81.28" y="-205.74"/>
@@ -31553,9 +31718,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <net name="N$33" class="0">
 <segment>
 <pinref part="JP6" gate="G$1" pin="1"/>
-<wire x1="-27.94" y1="-215.9" x2="-27.94" y2="-218.44" width="0.1524" layer="91"/>
+<wire x1="-27.94" y1="-215.9" x2="-27.94" y2="-236.22" width="0.1524" layer="91"/>
 <pinref part="N-FET" gate="G$1" pin="S"/>
-<wire x1="-27.94" y1="-218.44" x2="-22.86" y2="-218.44" width="0.1524" layer="91"/>
+<wire x1="-27.94" y1="-236.22" x2="-5.08" y2="-236.22" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$28" class="0">
