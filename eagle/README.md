@@ -8,6 +8,8 @@ to test separately these two ICs.
 
 ## TODO
 
+ - differentiate power supply between USB and battery
+ - use less power consuming accelerometer
  - calculate energy consumption
  - calculate theoretically operations timing (is it possible to read from ADC and displaying a picture reliably?)
  - expose pin for external generic power supply (connect them to the battery so we save some diodes)
