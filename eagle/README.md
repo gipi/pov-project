@@ -14,8 +14,4 @@ to test separately these two ICs.
  - calculate theoretically operations timing (is it possible to read from ADC and displaying a picture reliably?)
  - expose pin for external generic power supply (connect them to the battery so we save some diodes)
  - AVCC must be connected to VCC through a low-pass filter
- - Connect the ``GN`` pin from ``USB`` directly to ``GND-ISO`` to avoid dirty eagle behaviour
 
-## Things to know
-
- - The top ground plane is named ``GN`` from the ``USB`` ground pin and for some reason ``eagle`` doesn't understand that is connected to ``GND-ISO``
