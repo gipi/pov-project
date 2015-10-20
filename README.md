@@ -16,3 +16,7 @@ or you can download seperately the build system (my ``avr_stuffs`` repo)
 and use the ``CORE_BUILD_DIR`` variable pointing to it
 
     $ make -C firmware/ CORE_BUILD_DIR=/path/to/build/system
+
+## Links
+
+ - [Post](http://ao2.it/en/blog/2014/04/16/jmp-rope-theory-and-software) about a similar project
