@@ -8,10 +8,12 @@ to test separately these two ICs.
 
 ## TODO
 
- - differentiate power supply between USB and battery
- - use less power consuming accelerometer
- - calculate energy consumption
+ - differentiate power supply between USB and battery (maybe use opamp like arduino boards do)
+ - use less power consuming accelerometer (MPU-9255)
+ - use sensor that gives absolute angular position
+ - calculate energy consumption and minimize it
  - calculate theoretically operations timing (is it possible to read from ADC and displaying a picture reliably?)
  - expose pin for external generic power supply (connect them to the battery so we save some diodes)
+ - separate pins for ``SPI``, ``I2C``, ``USART`` with power pins near for each of them in order to facilitate coupling with related devices
  - AVCC must be connected to VCC through a low-pass filter
 
