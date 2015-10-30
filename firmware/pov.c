@@ -12,7 +12,6 @@
 #include <avr/power.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
-#include <include/io.h>
 
 /*
  * From "making a glyph from bit patterns" chapter of "Expert C
