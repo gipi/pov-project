@@ -8,6 +8,8 @@ to test separately these two ICs.
 
 ## TODO
 
+ - move power-on led on the other side of the board so to not interfere with POV leds
+ - add button to activate device
  - differentiate power supply between USB and battery (maybe use opamp like arduino boards do)
  - use less power consuming accelerometer (MPU-9255)
  - use sensor that gives absolute angular position
