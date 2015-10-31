@@ -17,6 +17,10 @@ and use the ``CORE_BUILD_DIR`` variable pointing to it
 
     $ make -C firmware/ CORE_BUILD_DIR=/path/to/build/system
 
+## Test Accelerometer
+
+    make -C firmware/ADXL345/ -f /opt/avr_stuffs/ciaoduino/Makefile.ciaoduino USER_LIB_PATH=~/Arduino/libraries/  ARDUINO_LIBS="Adafruit_Unified_Sensor Adafruit_ADXL345 Wire"
+
 ## Links
 
  - [Post](http://ao2.it/en/blog/2014/04/16/jmp-rope-theory-and-software) about a similar project
