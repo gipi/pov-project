@@ -24,3 +24,5 @@ and use the ``CORE_BUILD_DIR`` variable pointing to it
 ## Links
 
  - [Post](http://ao2.it/en/blog/2014/04/16/jmp-rope-theory-and-software) about a similar project
+ - [Adafruit's related project](https://github.com/adafruit/Adafruit-MiniPOV4-Kit)
+ - [Adafruit's very similar project](https://learn.adafruit.com/spokepov/)
