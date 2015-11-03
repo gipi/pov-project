@@ -8,7 +8,6 @@
  *  - allow for more "depth" of patterns (monochrome, RGB)
  *  - animations
  */
-//#define TEST
 
 #include <avr/io.h>
 #include <avr/power.h>
@@ -20,6 +19,7 @@
 #include <Adafruit_ADXL345_U.h>
 
 static long baud = 57600;
+sensors_event_t event; 
 
 void logme(const char* fmt, ...) {
     va_list ap;
@@ -188,8 +188,8 @@ Adafruit_ADXL345_Unified accel = Adafruit_ADXL345_Unified(12345);
  * Register in the EEPROM the accelerometer data.
  */
 struct _acc_history {
-    uint8_t min;
-    uint8_t max;
+    int8_t min;
+    int8_t max;
     uint16_t idx;
 } acc_history;
 
@@ -200,20 +200,21 @@ void dump_acc_history() {
     Serial1.println(acc_history.min);
 }
 
-void update_acc_register(sensors_event_t event) {
-    uint8_t actual_x_value = event.acceleration.x;
+void update_acc_register() {
+    // we need signed (maybe use abs())
+    int8_t actual_x_value = event.acceleration.x;
 
-    if (event.acceleration.x < acc_history.min ) {
+    if (actual_x_value < acc_history.min ) {
         acc_history.min = actual_x_value;
     }
-    if (event.acceleration.x > acc_history.max ) {
+    if (actual_x_value > acc_history.max ) {
         acc_history.max = actual_x_value;
     }
 
     // save the data into the eeprom
-    //EEPROM.write(0, acc_history.min);
-    //EEPROM.write(1, acc_history.max);
-    //EEPROM.write(2 + acc_history.idx, actual_x_value);
+    EEPROM.write(0, acc_history.min);
+    EEPROM.write(1, acc_history.max);
+    EEPROM.write(2 + acc_history.idx, actual_x_value);
 
     // update the index (1024 is the EEPROM size in the ATMEGA32U4)
     acc_history.idx = (acc_history.idx + 1) % (1024 - 2);
@@ -222,10 +223,7 @@ void update_acc_register(sensors_event_t event) {
 void timer1_ovf_callback() {
     display_next();
 
-    sensors_event_t event; 
-    /* Get a new sensor event */ 
-    accel.getEvent(&event);
-    //update_acc_register(event);
+    update_acc_register();
 }
 
 ISR(TIMER1_OVF_vect) {
@@ -246,20 +244,22 @@ ISR(TIMER1_OVF_vect) {
 void init_timer() {
     Serial1.println("init_timer()");
     Serial1.flush();
+
     cli();
+
     TCCR1A = 0;
     TCNT1 = 0;
-    TCCR1B |= _BV(CS11) | _BV(CS10);
+    TCCR1B |= _BV(CS10); // without prescaler
+    TCCR1B &= ~_BV(CS11);
+    TCCR1B &= ~_BV(CS12);
     TIMSK1 |= _BV(TOIE1);            // enable Timer1 Overflow Interrupt
 
     sei();
 }
 
-
-
 void setup() {
     //clock_prescale_set(clock_div_1);
-    delay(3000);// give me time to open the serial console
+    //delay(3000);// give me time to open the serial console
     // YOU MUST HAVE THE SERIAL OPEN MOTHERFUCKER
     Serial1.begin(baud);
 
@@ -281,16 +281,15 @@ void setup() {
     /* Set the range to whatever is appropriate for your project */
     accel.setRange(ADXL345_RANGE_16_G);
 
-    init_timer();
+    //init_timer();
 }
 
 void loop() {
     Serial1.println("loop()");
-    while(1)//; // needed in order to avoid crash (maybe?)
-    {
-#ifdef TEST
-        display_next();
-        _delay_ms(1000);
-#endif
+    while(1) {
+        /* Get a new sensor event */ 
+        accel.getEvent(&event);
+        timer1_ovf_callback();
+        delay(10);
     }
 }
