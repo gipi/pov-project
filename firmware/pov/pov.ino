@@ -18,6 +18,8 @@
 #include <Adafruit_Sensor.h>
 #include <Adafruit_ADXL345_U.h>
 
+#include "dump.h"
+
 static long baud = 57600;
 sensors_event_t event; 
 
@@ -184,14 +186,6 @@ void display_next() {
 Adafruit_ADXL345_Unified accel = Adafruit_ADXL345_Unified(12345);
 
 /************* EEPROM **********************/
-/**
- * Register in the EEPROM the accelerometer data.
- */
-struct _acc_history {
-    int8_t min;
-    int8_t max;
-    uint16_t idx;
-} acc_history;
 
 void dump_acc_history() {
     Serial1.print("history\n idx: ");
