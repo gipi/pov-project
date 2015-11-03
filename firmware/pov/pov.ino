@@ -21,6 +21,16 @@
 
 static long baud = 57600;
 
+void logme(const char* fmt, ...) {
+    va_list ap;
+    char tmp[64];
+
+    va_start(ap, fmt);
+    vsnprintf(tmp, 64, fmt, ap);
+    va_end(ap);
+
+    Serial1.println(tmp);
+}
 
 /*
  * From "making a glyph from bit patterns" chapter of "Expert C
@@ -252,12 +262,12 @@ void setup() {
     delay(3000);// give me time to open the serial console
     // YOU MUST HAVE THE SERIAL OPEN MOTHERFUCKER
     Serial1.begin(baud);
-    Serial1.println(__FILE__);
+
+    logme("src:%s", __FILE__);
+
     Serial1.println("setup()");
 
-    Serial1.print("sizeof ");
-    Serial1.println(sizeof(leds));
-    Serial1.println(sizeof(struct led_t));
+    logme("sizeof: %u %u", sizeof(leds), sizeof(struct led_t));
     dump_acc_history();
 
     init_led_system();
