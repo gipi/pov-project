@@ -18,7 +18,12 @@
 #include <Adafruit_Sensor.h>
 #include <Adafruit_ADXL345_U.h>
 
+// define __DUMP__ only if you want to save into the EEPROM
+// the value read. Note that the EEPROM has only a finite number
+// of erase/write operation so be wise with this option.
+#ifdef __DUMP__
 #include "dump.h"
+#endif //__DUMP__
 
 static long baud = 57600;
 sensors_event_t event; 
@@ -186,18 +191,20 @@ void display_next() {
 Adafruit_ADXL345_Unified accel = Adafruit_ADXL345_Unified(12345);
 
 /************* EEPROM **********************/
-
+#ifdef __DUMP__
 void dump_acc_history() {
     Serial1.print("history\n idx: ");
     Serial1.print(acc_history.idx);
     Serial1.print(" min: ");
     Serial1.println(acc_history.min);
 }
+#endif
 
 void update_acc_register() {
     // we need signed (maybe use abs())
     int8_t actual_x_value = event.acceleration.x;
 
+#ifdef __DUMP__
     if (actual_x_value < acc_history.min ) {
         acc_history.min = actual_x_value;
     }
@@ -205,6 +212,7 @@ void update_acc_register() {
         acc_history.max = actual_x_value;
     }
 
+#warning "EEPROM writing enabled"
     // save the data into the eeprom
     EEPROM.write(0, acc_history.min);
     EEPROM.write(1, acc_history.max);
@@ -212,6 +220,7 @@ void update_acc_register() {
 
     // update the index (1024 is the EEPROM size in the ATMEGA32U4)
     acc_history.idx = (acc_history.idx + 1) % (1024 - 2);
+#endif //__DUMP__
 }
 
 void timer1_ovf_callback() {
@@ -262,7 +271,6 @@ void setup() {
     Serial1.println("setup()");
 
     logme("sizeof: %u %u", sizeof(leds), sizeof(struct led_t));
-    dump_acc_history();
 
     init_led_system();
 
