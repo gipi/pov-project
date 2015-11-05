@@ -279,9 +279,6 @@ void init_timer() {
 }
 
 void setup() {
-    //clock_prescale_set(clock_div_1);
-    //delay(3000);// give me time to open the serial console
-    // YOU MUST HAVE THE SERIAL OPEN MOTHERFUCKER
     loginit();
 
     logme("src:%s", __FILE__);
