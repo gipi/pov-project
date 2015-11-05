@@ -28,6 +28,10 @@
 static long baud = 57600;
 sensors_event_t event; 
 
+void loginit() {
+    Serial1.begin(baud);
+}
+
 void logme(const char* fmt, ...) {
     va_list ap;
     char tmp[64];
@@ -110,14 +114,14 @@ const struct led_t leds[] = {
  * Here we set the direction for the various pins
  */
 void init_led_system() {
-    Serial1.println("--> init_led_system()");
+    logme("--> init_led_system()");
     unsigned int idx = 0;
 
     for (idx = 0 ; idx < sizeof(leds) ; idx++) {
         struct led_t led = leds[idx];
         *led.ddm |= _BV(led.dd);
     }
-    Serial1.println("<-- init_led_system()\n");
+    logme("<-- init_led_system()\n");
 }
 
 enum led_state_t {
@@ -150,13 +154,10 @@ void set_led_off(unsigned int idx) {
  * Simply loop over all the leds
  */
 void led_self_test() {
-    Serial1.println("--> led_self_test()");
+    logme("--> led_self_test()");
     unsigned int idx;
 
     unsigned int size = sizeof(leds)/sizeof(struct led_t);
-
-    Serial1.print("# leds: ");
-    Serial1.println(size);
 
     for (idx = 0 ; idx < size ; idx++) {
         set_led_on(idx);
@@ -193,10 +194,7 @@ Adafruit_ADXL345_Unified accel = Adafruit_ADXL345_Unified(12345);
 /************* EEPROM **********************/
 #ifdef __DUMP__
 void dump_acc_history() {
-    Serial1.print("history\n idx: ");
-    Serial1.print(acc_history.idx);
-    Serial1.print(" min: ");
-    Serial1.println(acc_history.min);
+    logme();
 }
 #endif
 
@@ -245,8 +243,7 @@ ISR(TIMER1_OVF_vect) {
  * (We are not using the Timer0 counter since is used by Wire, maybe)
  */
 void init_timer() {
-    Serial1.println("init_timer()");
-    Serial1.flush();
+    logme("init_timer()");
 
     cli();
 
@@ -264,11 +261,11 @@ void setup() {
     //clock_prescale_set(clock_div_1);
     //delay(3000);// give me time to open the serial console
     // YOU MUST HAVE THE SERIAL OPEN MOTHERFUCKER
-    Serial1.begin(baud);
+    loginit();
 
     logme("src:%s", __FILE__);
 
-    Serial1.println("setup()");
+    logme("setup()");
 
     logme("sizeof: %u %u", sizeof(leds), sizeof(struct led_t));
 
@@ -277,7 +274,7 @@ void setup() {
     led_self_test();
 
     if(!accel.begin()){
-        Serial1.println("No ADXL345!!");
+        logme("No ADXL345!!");
         while(1);
     }
     /* Set the range to whatever is appropriate for your project */
@@ -287,7 +284,7 @@ void setup() {
 }
 
 void loop() {
-    Serial1.println("loop()");
+    logme("loop()");
     while(1) {
         /* Get a new sensor event */ 
         accel.getEvent(&event);
