@@ -288,8 +288,6 @@ void setup() {
 
     logme("setup()");
 
-    logme("sizeof: %u %u", sizeof(leds), sizeof(struct led_t));
-
     init_led_system();
 
     led_self_test();
