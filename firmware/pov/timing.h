@@ -1,6 +1,10 @@
 #ifndef __TIMIMG__H_
 #define __TIMIMG__H_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdint.h>
 
 enum position_t {
@@ -39,4 +43,9 @@ struct state_t {
 };
 
 void update_state(struct state_t** h, int8_t x_value, int8_t y_value);
+
+#ifdef __cplusplus
+}
+#endif
+
 #endif //__TIMIMG__H_
