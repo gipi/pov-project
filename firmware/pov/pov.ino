@@ -18,6 +18,8 @@
 #include <Adafruit_Sensor.h>
 #include <Adafruit_ADXL345_U.h>
 
+#include "timing.h"
+
 // define __DUMP__ only if you want to save into the EEPROM
 // the value read. Note that the EEPROM has only a finite number
 // of erase/write operation so be wise with this option.
@@ -221,8 +223,27 @@ void update_acc_register() {
 #endif //__DUMP__
 }
 
+struct state_t* state = NULL;
+
+void calibrate_timing() {
+    int8_t actual_x_value = event.acceleration.x;
+    int8_t actual_y_value = event.acceleration.y;
+
+    update_state(&state, actual_x_value, actual_y_value);
+}
+
 void timer1_ovf_callback() {
-    display_next();
+    calibrate_timing();
+
+    logme("x=%hhd y=%hhd", state->x_value, state->y_value);
+
+    //if (state->x_extreme != UNDEFINED || state->y_extreme != UNDEFINED)
+    if (state->x_extreme != UNDEFINED) {
+        set_led_on(0);
+        delay(5);
+        set_led_off(0);
+        //display_next();
+    }
 
     update_acc_register();
 }
