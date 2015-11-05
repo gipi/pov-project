@@ -199,10 +199,10 @@ void dump_acc_history() {
 #endif
 
 void update_acc_register() {
+#ifdef __DUMP__
     // we need signed (maybe use abs())
     int8_t actual_x_value = event.acceleration.x;
 
-#ifdef __DUMP__
     if (actual_x_value < acc_history.min ) {
         acc_history.min = actual_x_value;
     }
