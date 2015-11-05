@@ -295,8 +295,8 @@ void setup() {
     led_self_test();
 
     if(!accel.begin()){
-        logme("No ADXL345!!");
-        while(1);
+        while(1)
+            logme("No ADXL345!! check your wiring please.");
     }
     /* Set the range to whatever is appropriate for your project */
     accel.setRange(ADXL345_RANGE_16_G);
