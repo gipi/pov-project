@@ -68,7 +68,7 @@ uint16_t MagicBootKey ATTR_NO_INIT;
  *  start key has been loaded into \ref MagicBootKey. If the bootloader started via the watchdog and the key is valid,
  *  this will force the user application to start via a software jump.
  */
-void Application_Jump_Check(void)
+void Application_Jump_Check(void) // FIXME: update to the 2015 version where (maybe?) is more reliable the checks
 {
 	bool JumpToApplication = false;
 
