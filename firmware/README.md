@@ -17,7 +17,7 @@ It's possible to build passing the path to the ``LUFA`` library path, like
 (the command must be issued into the ``bootloader/CDC/`` directory). After
 the ``hex`` file are generated you can upload with
 
-    $ avrdude -c buspirate -p atmega32u4 -P /dev/ttyUSB0 -b 115200 -F -U flash:w:bootloader/CDC/BootloaderCDC.hex
+    $ avrdude -c buspirate -p atmega32u4 -P /dev/ttyUSB0 -b 115200 -F -U flash:w:bootloaders/CDC/BootloaderCDC.hex
 
 The bootloader is capable of emulating a ``avr109`` protocol and you can flash a file
 with
